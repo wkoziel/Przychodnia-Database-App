@@ -1,13 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MySql.Data.MySqlClient;
 
 namespace Przychodnia.DAL.Encje
 {
     class Users
     {
-        //In progress
+        public string Login { get; set; }
+        public string Haslo { get; set; }
+        public string ID { get; set; }
+        public Users(MySqlDataReader dataReader)
+        {
+            Login = dataReader["Login"].ToString();
+            Haslo = dataReader["Hasło"].ToString();
+            ID = dataReader["CzyLekarz"].ToString() == "" ? "0" : dataReader["CzyLekarz"].ToString();
+        }
+
+        public override string ToString()
+        {
+            return $"{Login} {Haslo} {ID}";
+        }
     }
 }

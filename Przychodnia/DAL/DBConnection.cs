@@ -22,16 +22,10 @@ namespace Przychodnia.DAL
                 UserID = Nickname,
                 Password = Password,
                 Server = "localhost",
-                Database = "przychodnia_v2",
+                Database = "przychodnia",
                 Port = 3306
             };
         }
-
-        public static void Login(string user, string password)
-        {
-            Nickname = user; Password = password;
-        }
-
         public void printBuilder() => Debug.Write(stringBuilder.ToString());
     }
 }
