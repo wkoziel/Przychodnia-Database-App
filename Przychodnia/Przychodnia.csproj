@@ -84,10 +84,21 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DAL\Encje\Appointment.cs" />
+    <Compile Include="DAL\Encje\Clinic.cs" />
+    <Compile Include="DAL\Encje\DocAssignment.cs" />
     <Compile Include="DAL\Encje\Doctor.cs" />
     <Compile Include="DAL\Encje\Patient.cs" />
+    <Compile Include="DAL\Encje\Room.cs" />
+    <Compile Include="DAL\Encje\Users.cs" />
+    <Compile Include="DAL\Queries.cs" />
+    <Compile Include="DAL\Repozytoria\AppointmentRepo.cs" />
+    <Compile Include="DAL\Repozytoria\ClinicRepo.cs" />
+    <Compile Include="DAL\Repozytoria\DocAssignmentRepo.cs" />
     <Compile Include="DAL\Repozytoria\DoctorRepo.cs" />
     <Compile Include="DAL\Repozytoria\PatientRepo.cs" />
+    <Compile Include="DAL\Repozytoria\RoomRepo.cs" />
+    <Compile Include="DAL\Repozytoria\UsersRepo.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

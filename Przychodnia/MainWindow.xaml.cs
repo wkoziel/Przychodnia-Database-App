@@ -24,9 +24,16 @@ namespace Przychodnia
         public MainWindow()
         {
             InitializeComponent();
-            //test
+            
+            //test wczytywania
             //DoctorRepo.GetAllDoctors();
-            PatientRepo.GetAllPatients();
+            //PatientRepo.GetAllPatients();
+            //AppointmentRepo.GetAllAppoitments();
+            //ClinicRepo.GetAllClinics();
+            //RoomRepo.GetAllRooms();
+            //DocAssignmentRepo.GetAllDocAssignments();
+            //RoomRepo.GetAllRooms();
+
         }
     }
 }
