@@ -13,11 +13,15 @@ C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\bin\Deb
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.csprojAssemblyReference.cache
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\TextBoxLogin.baml
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\LoginScreen.g.cs
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\MainWindow.g.cs
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\TextBoxLogin.g.cs
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\App.g.cs
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia_MarkupCompile.cache
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia_MarkupCompile.lref
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\LoginScreen.baml
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\MainWindow.baml
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.g.resources
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.Properties.Resources.resources
@@ -26,5 +30,4 @@ C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Deb
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.csproj.CopyComplete
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.exe
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.pdb
-C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\LoginScreen.g.cs
-C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\LoginScreen.baml
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.csprojAssemblyReference.cache

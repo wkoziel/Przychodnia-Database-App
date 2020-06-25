@@ -33,30 +33,5 @@ namespace Przychodnia.DAL.Repozytoria
             }
             return users;
         }
-
-        public static bool IfUserCorrect(string login, string password)
-        {
-            bool check = false;
-            List<Users> users = GetAllUsers();
-            foreach (var item in users)
-            {
-                if (item.Login == login && item.Haslo == password)
-                {
-                    check = true;
-                }
-            }
-            return check;
-        }
-
-        //do poprawy
-        public static string Login(string login, string password)
-        {
-            List<Users> users = GetAllUsers();
-            string id = "0";
-            foreach (var item in users)
-                if (item.Login == login && item.Haslo == password)
-                    id = item.ID;
-            return id;
-        }
     }
 }

@@ -26,6 +26,12 @@ namespace Przychodnia.DAL
                 Port = 3306
             };
         }
+
+        public static void Login(string user, string password)
+        {
+            Nickname = user; Password = password;
+        }
+
         public void printBuilder() => Debug.Write(stringBuilder.ToString());
     }
 }
