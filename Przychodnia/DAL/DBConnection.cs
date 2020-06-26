@@ -29,6 +29,7 @@ namespace Przychodnia.DAL
 
         public static void Login(string user, string password)
         {
+
             Nickname = user; Password = password;
         }
 

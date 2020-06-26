@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Czas wygenerowania: 23 Cze 2020, 15:37
+-- Czas wygenerowania: 26 Cze 2020, 15:07
 -- Wersja serwera: 5.5.21-log
 -- Wersja PHP: 5.3.20
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Baza danych: `przychodnia_v2`
+-- Baza danych: `przychodnia`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `lekarz` (
 --
 
 INSERT INTO `lekarz` (`ID_lekarza`, `ID_poradni`, `Imię`, `Nazwisko`, `Numer_telefonu`, `Specjalizacja`) VALUES
-(1, 1, 'Alina ', 'Wąs', 252971192, 'Alergolog'),
+(1, 1, 'Alina ', 'Kowalska', 252971192, 'Alergolog'),
 (2, 2, 'Andzej', 'Biały', 866562652, 'Pediatria'),
 (3, 3, 'Katarzyna', 'Białko', 953478718, 'Stomatologia'),
 (4, 2, 'Janusz', 'Wąs', 252971191, 'Pediatria'),
@@ -183,8 +183,8 @@ CREATE TABLE IF NOT EXISTS `użytkownicy` (
 --
 
 INSERT INTO `użytkownicy` (`Login`, `Hasło`, `CzyLekarz`) VALUES
-('anowak', '1234', NULL),
-('awąs', '1234', 1);
+('akowalska', '1234', 1),
+('anowak', '1234', NULL);
 
 -- --------------------------------------------------------
 

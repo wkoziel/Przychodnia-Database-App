@@ -26,9 +26,7 @@ namespace Przychodnia
         public MainWindow()
         {
             InitializeComponent();
-            //TEST
-            AppointmentRepo.GetAllAppoitments();
-            DoctorRepo.GetAllDoctors();
+            //TEST CZY ZALOGOWANY
             PatientRepo.GetAllPatients();
             UsersRepo.GetAllUsers();
         }
