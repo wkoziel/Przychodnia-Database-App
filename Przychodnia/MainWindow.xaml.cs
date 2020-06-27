@@ -23,12 +23,10 @@ namespace Przychodnia
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
-            //TEST CZY ZALOGOWANY
-            PatientRepo.GetAllPatients();
-            UsersRepo.GetAllUsers();
         }
     }
 }

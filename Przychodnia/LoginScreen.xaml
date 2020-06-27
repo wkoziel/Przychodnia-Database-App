@@ -6,24 +6,33 @@
         xmlns:local="clr-namespace:Przychodnia"
         mc:Ignorable="d"
         Title="Przychodnia" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Width="300" Height="250" Background="LightBlue">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Images/background.jpg" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
 
-        <Grid.RowDefinitions>
+        <Border BorderBrush="DarkBlue" BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1.5*" />
-        </Grid.RowDefinitions>
-        
-        <Label Content="Login:" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left"  FontSize="20" Height="40" />
-        <Label Content="Hasło:" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" Height="40" />
-        
-        <local:TextBoxLogin x:Name="textBoxLogin" Grid.Row="1" Margin="10 0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"
-                                Width="250" Text="{Binding Path = Login, Mode = TwoWay}" />
+            
+            <Grid Width="300" Height="200" Background="AliceBlue">
 
-        <PasswordBox x:Name="textBoxPassword" Grid.Row="3" Margin="10 0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" />
-        <Button Width="100" Height="30"  Grid.Row="4" Margin="0 0 10 0" HorizontalAlignment="Right" FontSize="18" Content="Zaloguj" Click="LoginButton_Click"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1.5*" />
+                </Grid.RowDefinitions>
+
+                <Label Content="Login:" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left"  FontSize="20" Height="40" />
+                <local:TextBoxLogin x:Name="textBoxLogin" Grid.Row="1" Margin="10 0" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                    Width="250" Text="{Binding Path = Login, Mode = TwoWay}" />
+
+                <Label Content="Hasło:" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" Height="40" />
+                <PasswordBox x:Name="textBoxPassword" Grid.Row="3" Margin="10 0" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" />
+
+                <Button Width="100" Height="30"  Grid.Row="4" Margin="0 0 10 0" HorizontalAlignment="Right" FontSize="18" Content="Zaloguj" Click="LoginButton_Click"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
