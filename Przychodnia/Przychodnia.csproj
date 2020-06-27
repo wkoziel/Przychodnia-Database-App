@@ -78,6 +78,9 @@
     <Compile Include="LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AllTabs\AppointmentTab.xaml.cs">
+      <DependentUpon>AppointmentTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TextBoxLogin.xaml.cs">
       <DependentUpon>TextBoxLogin.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="AllTabs\AppointmentTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TextBoxLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

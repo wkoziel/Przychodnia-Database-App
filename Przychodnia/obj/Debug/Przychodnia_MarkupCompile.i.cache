@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\App.xaml
-31532822431
+4-790005245
 
-24-72931398
+251831380750
 125-1210553682
-LoginScreen.xaml;MainWindow.xaml;TextBoxLogin.xaml;
+LoginScreen.xaml;MainWindow.xaml;AllTabs\AppointmentTab.xaml;TextBoxLogin.xaml;
 
-False
+True
 

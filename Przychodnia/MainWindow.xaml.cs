@@ -27,6 +27,24 @@ namespace Przychodnia
         public MainWindow()
         {
             InitializeComponent();
+            FillTabsComboBox();
+        }
+
+        //Wypełnia ComboBox nazwami tabel
+        void FillTabsComboBox()
+        {
+            TabsComboBox.Items.Add("Wizyty");
+            TabsComboBox.Items.Add("Pacjenci");
+            TabsComboBox.Items.Add("Lekarze");
+            TabsComboBox.Items.Add("Sale");
+            TabsComboBox.Items.Add("Poradnie");
+            TabsComboBox.Items.Add("Przydział Lekarzy");
+            TabsComboBox.Items.Refresh();
+        }
+
+        private void ChangeTableComboBox(object sender, SelectionChangedEventArgs e)
+        {
+            //Funkcja zmieniająca tabele w zależności od wybranej w combobox
         }
     }
 }

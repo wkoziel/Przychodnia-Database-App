@@ -30,4 +30,5 @@ C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Deb
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.csproj.CopyComplete
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.exe
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.pdb
-C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.csprojAssemblyReference.cache
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\AppointmentTab.g.cs
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\AppointmentTab.baml
