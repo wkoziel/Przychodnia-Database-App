@@ -19,7 +19,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                             <GridViewColumnHeader>
-                                <TextBlock Text="ID_wiz" Background="AliceBlue" Width="{Binding ActualWidth, ElementName=kolumna1}">
+                                <TextBlock Text="ID_wiz" Background="AliceBlue" Width="{Binding ActualWidth, ElementName=Col1}">
 
                                 </TextBlock>
                             </GridViewColumnHeader>

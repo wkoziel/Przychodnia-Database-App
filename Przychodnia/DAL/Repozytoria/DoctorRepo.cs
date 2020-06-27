@@ -27,11 +27,11 @@ namespace Przychodnia.DAL.Repozytoria
             catch { }
 
             //Console print
-            //foreach (var item in doctors)
-            //{
-            //    Debug.WriteLine(item.ToString());
-            //}
-            
+            foreach (var item in doctors)
+            {
+                Debug.WriteLine(item.ToString());
+            }
+
             return doctors;
         }
     }

@@ -28,6 +28,7 @@ namespace Przychodnia
         {
             InitializeComponent();
             FillTabsComboBox();
+            DoctorRepo.GetAllDoctors(); //Testowo wyświetla w outpucie zawartość tabeli lekarze - test poprawności połączenia z bazą
         }
 
         //Wypełnia ComboBox nazwami tabel

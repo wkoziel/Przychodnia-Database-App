@@ -31,9 +31,10 @@ namespace Przychodnia.Tabs
         //Wojtek: Nie umiem wypełniać tego typu listy, to jest do zmieny całe xd
         void FillAppointmentTab()
         {
-            List<Appointment> appointments =  Queries.Appointments;
+            List<Appointment> appointments =  Queries.Appointments; //import listy z wszyskimi wizytami
+
             foreach (var item in appointments)
-                Wizyta.Items.Add(item);
+                Wizyta.Items.Add(item.ToString());
             Wizyta.Items.Refresh();
         }
 
