@@ -22,6 +22,39 @@ namespace Przychodnia.Functions
         public PatientForm()
         {
             InitializeComponent();
+            ComboBoxFill();
+        }
+
+        private void XButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ComboBoxFill()
+        {
+            PlecComboBox.Items.Add("Kobieta");
+            PlecComboBox.Items.Add("Mężczyzna");
+
+            for (int i = 0; i < 32; i++)
+                DzienUrComboBox.Items.Add(i);
+            for (int i = 1920; i < 2021; i++)
+                RokUrComboBox.Items.Add(i);
+
+            for (int i = 0; i < 130; i++)
+                WiekComboBox.Items.Add(i);
+
+            MiesiacUrComboBox.Items.Add("Styczeń");
+            MiesiacUrComboBox.Items.Add("Luty");
+            MiesiacUrComboBox.Items.Add("Marzec");
+            MiesiacUrComboBox.Items.Add("Kwiecień");
+            MiesiacUrComboBox.Items.Add("Maj");
+            MiesiacUrComboBox.Items.Add("Czerwiec");
+            MiesiacUrComboBox.Items.Add("Lipiec");
+            MiesiacUrComboBox.Items.Add("Sierpień");
+            MiesiacUrComboBox.Items.Add("Wrzesień");
+            MiesiacUrComboBox.Items.Add("Październik");
+            MiesiacUrComboBox.Items.Add("Listopad");
+            MiesiacUrComboBox.Items.Add("Grudzień");
         }
     }
 }

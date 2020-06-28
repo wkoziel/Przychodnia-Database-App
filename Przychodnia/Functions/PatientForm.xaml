@@ -5,8 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Przychodnia.Functions"
         mc:Ignorable="d"
-        Title="PatientForm" Height="700" Width="1200" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="PatientForm" Height="500" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Background="AliceBlue">
+
+        <Label Content="Nazwa funkcji" FontSize="30" Margin="10 5"/>
+        <Button Content="X"  Width="30" Height="30" Margin="5" Click="XButtonClick" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+
+        <Grid Margin="80 60 80 20" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
         
+            <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" >
+
+                <WrapPanel Orientation="Vertical" Margin="5">
+                    <Label Content="PESEL:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
+                    <TextBox x:Name="PESEL" Text="" FontSize="16" MaxLength="11"/>
+                </WrapPanel>
+                
+                <WrapPanel Orientation="Vertical" Margin="5">
+                    <Label Content="Imie:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
+                    <TextBox x:Name="ImieTextBox" Text="" FontSize="16"/>
+                </WrapPanel>
+                
+                <WrapPanel Orientation="Vertical" Margin="5">
+                    <Label Content="Nazwisko:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
+                    <TextBox x:Name="NazwiskoTextBox" Text="" FontSize="16"/>
+                </WrapPanel>
+                
+                <WrapPanel Orientation="Vertical" Margin="5">
+                    <Label Content="Płeć:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
+                    <ComboBox x:Name="PlecComboBox"/>
+                </WrapPanel>
+                
+                <WrapPanel Orientation="Vertical" Margin="5">
+                    <Label Content="Data urodzenia:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
+                    <WrapPanel Orientation="Horizontal">
+                        <ComboBox x:Name="DzienUrComboBox" Width="30"/>
+                        <ComboBox x:Name="MiesiacUrComboBox" Width="60"/>
+                        <ComboBox x:Name="RokUrComboBox" Width="40"/>
+                    </WrapPanel>
+                </WrapPanel>
+                
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" >
+            
+                <WrapPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Wiek:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
+                    <ComboBox x:Name="WiekComboBox" Width="40" Text="Wiek" Height="20"/>
+                </WrapPanel>
+                
+                <WrapPanel Orientation="Vertical" Margin="5">
+                    <Label Content="Adres:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
+                    <Label Content="Miasto:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="14"/>
+                    <TextBox x:Name="MiastoTextBox" Text="" FontSize="16"/>
+                    <Label Content="Ulica:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="14"/>
+                    <TextBox x:Name="UlicaTextBox" Text="" FontSize="16"/>
+                    <Label Content="Numer Domu:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="14"/>
+                    <TextBox x:Name="NumerDomuTextBox" Text="" FontSize="16" />
+                </WrapPanel>
+                
+                <WrapPanel Orientation="Vertical" Margin="5">
+                    <Label Content="Numer kontaktowy:" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
+                    <TextBox x:Name="NumerKontaktowyTextBox" Text="" FontSize="16"/>
+                </WrapPanel>
+            </StackPanel>
+        
+        </Grid>
     </Grid>
 </Window>
