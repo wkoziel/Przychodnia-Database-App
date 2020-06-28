@@ -7,6 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <ListView x:Name="RoomListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Numer_sali}" Header="Numer sali" Width="70" />
+                    <GridViewColumn DisplayMemberBinding="{Binding ID_poradni}" Header="ID poradni" Width="70"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Typ_sali}" Header="Typ sali" Width="90"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

@@ -5,8 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Przychodnia.AllTabs"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="700" d:DesignWidth="1200">
     <Grid>
-            
+        <ListView x:Name="DoctorListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding ID_lekarza}" Header="ID lekarza" Width="60" />
+                    <GridViewColumn DisplayMemberBinding="{Binding ID_poradni}" Header="ID poradni" Width="60"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Imie}" Header="Imię" Width="80"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Nazwisko}" Header="Nazwisko" Width="80"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Numer_telefonu}" Header="Numer telefonu" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Specjalizacja}" Header="Specjalizacja" Width="100"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

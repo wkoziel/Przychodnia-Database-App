@@ -5,19 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Przychodnia.Tabs"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="1200">
+             d:DesignHeight="500" d:DesignWidth="1000">
     <Grid>
-        <ListView x:Name="AppointmentListView">
+        <ListView x:Name="AppointmentListView" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding ID_wizyty}" Header="ID wizyty" Width="50" />
-                    <GridViewColumn DisplayMemberBinding="{Binding PESEL}" Header="PESEL" Width="150"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding ID_lekarza}" Header="ID lekarza" Width="50"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Numer_sali}" Header="Numer sali" Width="50"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Rodzaj_wizyty}" Header="Rodzaj wizyty" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ID_wizyty}" Header="ID wizyty" Width="60" />
+                    <GridViewColumn DisplayMemberBinding="{Binding PESEL}" Header="PESEL" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ID_lekarza}" Header="ID lekarza" Width="60"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Numer_sali}" Header="Numer sali" Width="60"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Rodzaj_wizyty}" Header="Rodzaj wizyty" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Opis_dolegliwosci}" Header="Opis dolegliwosci" Width="150"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Data_wizyty}" Header="Data wizyty" Width="150"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Godzina_wizyty}" Header="Data wizyty" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Data_wizyty}" Header="Data wizyty" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Godzina_wizyty}" Header="Data wizyty" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Choroba}" Header="Choroba" Width="150"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Leczenie}" Header="Leczenie" Width="150"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Zwolnienie}" Header="Zwolnienie" Width="150"/>

@@ -75,6 +75,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Lists.cs" />
     <Compile Include="AllTabs\ClinicTab.xaml.cs">
       <DependentUpon>ClinicTab.xaml</DependentUpon>
     </Compile>
@@ -86,6 +87,9 @@
     </Compile>
     <Compile Include="AllTabs\RoomTab.xaml.cs">
       <DependentUpon>RoomTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\AppointmentForm.xaml.cs">
+      <DependentUpon>AppointmentForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Functions\PatientForm.xaml.cs">
       <DependentUpon>PatientForm.xaml</DependentUpon>
@@ -115,6 +119,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Functions\AppointmentForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Functions\PatientForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,7 +147,6 @@
     <Compile Include="DAL\Encje\Patient.cs" />
     <Compile Include="DAL\Encje\Room.cs" />
     <Compile Include="DAL\Encje\Users.cs" />
-    <Compile Include="DAL\Queries.cs" />
     <Compile Include="DAL\Repozytoria\AppointmentRepo.cs" />
     <Compile Include="DAL\Repozytoria\ClinicRepo.cs" />
     <Compile Include="DAL\Repozytoria\DocAssignmentRepo.cs" />

@@ -12,17 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Przychodnia.DAL.Encje;
+using Przychodnia.DAL.Repozytoria;
 
 namespace Przychodnia.AllTabs
 {
-    /// <summary>
-    /// Interaction logic for RoomTab.xaml
-    /// </summary>
     public partial class RoomTab : UserControl
     {
         public RoomTab()
         {
             InitializeComponent();
+            List<Room> RoomList = RoomRepo.GetAllRooms();
+            RoomListView.ItemsSource = RoomList;
         }
     }
 }

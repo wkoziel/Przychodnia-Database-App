@@ -2,6 +2,7 @@
 using System.Windows;
 using Przychodnia.DAL.Encje;
 using Przychodnia.DAL;
+using Przychodnia.DAL.Repozytoria;
 
 namespace Przychodnia
 {
@@ -20,7 +21,7 @@ namespace Przychodnia
 
         private bool UserCheck(string nickname, string password)
         {
-            List<Users> Users = Queries.Users;
+            List<Users> Users = UsersRepo.GetAllUsers();
 
             if (Users.Count == 0)
             {

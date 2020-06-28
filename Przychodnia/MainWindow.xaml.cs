@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Przychodnia.AllTabs;
 
 namespace Przychodnia
 {
@@ -31,7 +32,6 @@ namespace Przychodnia
         {
             InitializeComponent();
             FillTabsComboBox();
-            DoctorRepo.GetAllDoctors(); //Testowo wyświetla w outpucie zawartość tabeli lekarze - test poprawności połączenia z bazą
         }
 
         //Wypełnia ComboBox nazwami tabel
@@ -50,35 +50,73 @@ namespace Przychodnia
             int choice = TabsComboBox.SelectedIndex;
             if (choice == 0)
             {
+                AddContent.IsEnabled = true;
+                EditContent.IsEnabled = true;
+                DeleteContent.IsEnabled = true;
                 TableSpace.Children.Clear();
                 TableSpace.Children.Add(new AppointmentTab());
             }
             else if(choice == 1)
             {
+                AddContent.IsEnabled = true;
+                EditContent.IsEnabled = true;
+                DeleteContent.IsEnabled = true;
                 TableSpace.Children.Clear();
                 TableSpace.Children.Add(new PatientTab());
             }
             else if (choice == 2)
             {
+                AddContent.IsEnabled = false;
+                EditContent.IsEnabled = false;
+                DeleteContent.IsEnabled = false;
                 TableSpace.Children.Clear();
                 TableSpace.Children.Add(new DoctorTab());
             }
             else if (choice == 3)
             {
+                AddContent.IsEnabled = false;
+                EditContent.IsEnabled = false;
+                DeleteContent.IsEnabled = false;
                 TableSpace.Children.Clear();
                 TableSpace.Children.Add(new RoomTab());
             }
             else if (choice == 4)
             {
+                AddContent.IsEnabled = false;
+                EditContent.IsEnabled = false;
+                DeleteContent.IsEnabled = false;
                 TableSpace.Children.Clear();
                 TableSpace.Children.Add(new ClinicTab());
             }
         }
 
-        private void AddNewPatientButtonClick(object sender, RoutedEventArgs e)
+        private void AddNewButtonClick(object sender, RoutedEventArgs e)
         {
-            PatientForm window = new PatientForm();
-            window.Show();
+            if (TabsComboBox.SelectedIndex == 1)
+            {
+                PatientForm window = new PatientForm();
+                window.Show();
+            }
+            else if(TabsComboBox.SelectedIndex == 0)
+            {
+                AppointmentForm window = new AppointmentForm();
+                window.Show();
+            }
+            
+        }
+
+        private void EditButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (TabsComboBox.SelectedIndex == 1)
+            {
+                PatientForm window = new PatientForm();
+                window.Show();
+            }
+            else if (TabsComboBox.SelectedIndex == 0)
+            {
+                AppointmentForm window = new AppointmentForm();
+                window.Show();
+            }
         }
     }
 }
