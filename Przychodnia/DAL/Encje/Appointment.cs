@@ -11,6 +11,7 @@ namespace Przychodnia.DAL.Encje
         public string Rodzaj_wizyty { get; set; }
         public string Opis_dolegliwosci { get; set; }
         public string Data_wizyty { get; set; }
+        public string Godzina_wizyty { get; set; }
         public string Choroba { get; set; }
         public string Leczenie { get; set; }
         public string Zwolnienie { get; set; }
@@ -24,6 +25,7 @@ namespace Przychodnia.DAL.Encje
             Rodzaj_wizyty = dataReader["Rodzaj_wizyty"].ToString();
             Opis_dolegliwosci = dataReader["Opis_dolegliwości"].ToString();
             Data_wizyty = dataReader["Data_wizyty"].ToString().Remove(10);
+            Godzina_wizyty = dataReader["Godzina_wizyty"].ToString();
             Choroba = dataReader["Choroba"].ToString();
             Leczenie = dataReader["Leczenie"].ToString();
             Zwolnienie = dataReader["Zwolnienie"].ToString();
@@ -31,7 +33,7 @@ namespace Przychodnia.DAL.Encje
 
         public override string ToString()
         {
-            return $"{ID_wizyty} {PESEL} {ID_lekarza} {Numer_sali} {Rodzaj_wizyty} {Opis_dolegliwosci} {Data_wizyty} {Choroba} {Leczenie} {Zwolnienie}";
+            return $"{ID_wizyty} {PESEL} {ID_lekarza} {Numer_sali} {Rodzaj_wizyty} {Opis_dolegliwosci} {Data_wizyty} {Godzina_wizyty} {Choroba} {Leczenie} {Zwolnienie}";
         }
     }
 }

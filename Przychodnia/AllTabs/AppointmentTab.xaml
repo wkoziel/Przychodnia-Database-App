@@ -17,6 +17,7 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Rodzaj_wizyty}" Header="Rodzaj wizyty" Width="150"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Opis_dolegliwosci}" Header="Opis dolegliwosci" Width="150"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Data_wizyty}" Header="Data wizyty" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Godzina_wizyty}" Header="Data wizyty" Width="150"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Choroba}" Header="Choroba" Width="150"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Leczenie}" Header="Leczenie" Width="150"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Zwolnienie}" Header="Zwolnienie" Width="150"/>
