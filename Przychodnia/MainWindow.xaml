@@ -22,7 +22,7 @@
 
             <ComboBox Name="TabsComboBox" Grid.Column="0" Width="250" Height="25" SelectedIndex="0" SelectionChanged="ChangeTableComboBox"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="AddContent" Content="Dodaj" Width="150" Margin="10"/>
+                <Button x:Name="AddContent" Content="Dodaj" Click="AddNewPatientButtonClick" Width="150" Margin="10"/>
                 <Button x:Name="EditContent" Content="Edytuj"  Width="150" Margin="10"/>
                 <Button x:Name="DeleteContent" Content="Usuń"  Width="150" Margin="10"/>
                 <Button x:Name="Opcjonalne1" Content="Opcja1"  Width="150" Margin="10"/>

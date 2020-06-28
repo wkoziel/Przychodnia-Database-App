@@ -23,7 +23,7 @@ namespace Przychodnia.DAL.Encje
             Numer_sali = (int)dataReader["Numer_sali"];
             Rodzaj_wizyty = dataReader["Rodzaj_wizyty"].ToString();
             Opis_dolegliwosci = dataReader["Opis_dolegliwości"].ToString();
-            Data_wizyty = dataReader["Data_wizyty"].ToString();
+            Data_wizyty = dataReader["Data_wizyty"].ToString().Remove(10);
             Choroba = dataReader["Choroba"].ToString();
             Leczenie = dataReader["Leczenie"].ToString();
             Zwolnienie = dataReader["Zwolnienie"].ToString();

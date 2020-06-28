@@ -1,6 +1,7 @@
 ﻿using Przychodnia.AllTabs;
 using Przychodnia.DAL;
 using Przychodnia.DAL.Repozytoria;
+using Przychodnia.Functions;
 using Przychodnia.Tabs;
 using System;
 using System.Collections.Generic;
@@ -72,6 +73,12 @@ namespace Przychodnia
                 TableSpace.Children.Clear();
                 TableSpace.Children.Add(new ClinicTab());
             }
+        }
+
+        private void AddNewPatientButtonClick(object sender, RoutedEventArgs e)
+        {
+            PatientForm window = new PatientForm();
+            window.Show();
         }
     }
 }

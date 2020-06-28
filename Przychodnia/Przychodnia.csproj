@@ -87,6 +87,9 @@
     <Compile Include="AllTabs\RoomTab.xaml.cs">
       <DependentUpon>RoomTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Functions\PatientForm.xaml.cs">
+      <DependentUpon>PatientForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AllTabs\RoomTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Functions\PatientForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
