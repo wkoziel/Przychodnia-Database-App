@@ -1,5 +1,4 @@
-﻿using Przychodnia.DAL.Encje;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Przychodnia.DAL;
-using Przychodnia.DAL.Repozytoria;
-namespace Przychodnia.Tabs
-{
-    using System.Collections.ObjectModel;
 
-    public partial class AppointmentTab : UserControl
+namespace Przychodnia.AllTabs
+{
+    /// <summary>
+    /// Interaction logic for ClinicTab.xaml
+    /// </summary>
+    public partial class ClinicTab : UserControl
     {
-        public AppointmentTab()
+        public ClinicTab()
         {
             InitializeComponent();
-            List<Appointment> AppointmentList = AppointmentRepo.GetAllAppoitments();
-            AppointmentListView.ItemsSource = AppointmentList;
         }
-
     }
 }

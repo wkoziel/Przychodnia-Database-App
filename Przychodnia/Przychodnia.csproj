@@ -75,6 +75,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AllTabs\ClinicTab.xaml.cs">
+      <DependentUpon>ClinicTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AllTabs\DoctorTab.xaml.cs">
+      <DependentUpon>DoctorTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AllTabs\PatientTab.xaml.cs">
+      <DependentUpon>PatientTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AllTabs\RoomTab.xaml.cs">
+      <DependentUpon>RoomTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>
     </Compile>
@@ -84,6 +96,22 @@
     <Compile Include="TextBoxLogin.xaml.cs">
       <DependentUpon>TextBoxLogin.xaml</DependentUpon>
     </Compile>
+    <Page Include="AllTabs\ClinicTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllTabs\DoctorTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllTabs\PatientTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllTabs\RoomTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

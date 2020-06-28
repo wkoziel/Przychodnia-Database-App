@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Przychodnia"
         xmlns:table="clr-namespace:Przychodnia.Tabs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Przychodnia" Height="800" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid x:Name="Window" Background="AliceBlue">
         
         <Grid.RowDefinitions>
@@ -29,9 +29,8 @@
                 <Button x:Name="Opcjonalne2" Content="Opcja2"  Width="150" Margin="10"/>
             </StackPanel>
         </Grid>
-        
-        <Grid x:Name="Table" Grid.Row="1">
-            <table:AppointmentTab/>
+
+        <Grid x:Name="TableSpace" Grid.Row="1" Margin="20 0">
         </Grid>
     </Grid>
     

@@ -1,5 +1,7 @@
-﻿using Przychodnia.DAL;
+﻿using Przychodnia.AllTabs;
+using Przychodnia.DAL;
 using Przychodnia.DAL.Repozytoria;
+using Przychodnia.Tabs;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -39,13 +41,37 @@ namespace Przychodnia
             TabsComboBox.Items.Add("Lekarze");
             TabsComboBox.Items.Add("Sale");
             TabsComboBox.Items.Add("Poradnie");
-            TabsComboBox.Items.Add("Przydział Lekarzy");
             TabsComboBox.Items.Refresh();
         }
 
         private void ChangeTableComboBox(object sender, SelectionChangedEventArgs e)
         {
-            //Funkcja zmieniająca tabele w zależności od wybranej w combobox
+            int choice = TabsComboBox.SelectedIndex;
+            if (choice == 0)
+            {
+                TableSpace.Children.Clear();
+                TableSpace.Children.Add(new AppointmentTab());
+            }
+            else if(choice == 1)
+            {
+                TableSpace.Children.Clear();
+                TableSpace.Children.Add(new PatientTab());
+            }
+            else if (choice == 2)
+            {
+                TableSpace.Children.Clear();
+                TableSpace.Children.Add(new DoctorTab());
+            }
+            else if (choice == 3)
+            {
+                TableSpace.Children.Clear();
+                TableSpace.Children.Add(new RoomTab());
+            }
+            else if (choice == 4)
+            {
+                TableSpace.Children.Clear();
+                TableSpace.Children.Add(new ClinicTab());
+            }
         }
     }
 }

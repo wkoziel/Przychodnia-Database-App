@@ -33,3 +33,11 @@ C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Deb
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\AppointmentTab.g.cs
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\AppointmentTab.baml
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.csprojAssemblyReference.cache
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\ClinicTab.g.cs
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\ClinicTab.baml
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\DoctorTab.g.cs
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\PatientTab.g.cs
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\RoomTab.g.cs
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\DoctorTab.baml
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\PatientTab.baml
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\AllTabs\RoomTab.baml
