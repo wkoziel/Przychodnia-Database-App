@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Cze 2020, 14:58
+-- Czas generowania: 28 Cze 2020, 16:52
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.6
 
@@ -41,7 +41,7 @@ CREATE TABLE `lekarz` (
 --
 
 INSERT INTO `lekarz` (`ID_lekarza`, `ID_poradni`, `Imię`, `Nazwisko`, `Numer_telefonu`, `Specjalizacja`) VALUES
-(1, 1, 'Alina ', 'Wąs', 252971192, 'Alergolog'),
+(1, 1, 'Alina ', 'Kowalska', 252971192, 'Alergolog'),
 (2, 2, 'Andzej', 'Biały', 866562652, 'Pediatria'),
 (3, 3, 'Katarzyna', 'Białko', 953478718, 'Stomatologia'),
 (4, 2, 'Janusz', 'Wąs', 252971191, 'Pediatria'),
@@ -160,6 +160,26 @@ INSERT INTO `sala` (`Numer_sali`, `ID_poradni`, `Typ_sali`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `użytkownicy`
+--
+
+CREATE TABLE `użytkownicy` (
+  `Login` varchar(15) COLLATE utf8_polish_ci NOT NULL,
+  `Hasło` varchar(20) COLLATE utf8_polish_ci NOT NULL,
+  `CzyLekarz` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `użytkownicy`
+--
+
+INSERT INTO `użytkownicy` (`Login`, `Hasło`, `CzyLekarz`) VALUES
+('akowalska', '1234', 1),
+('anowak', '1234', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `wizyta`
 --
 
@@ -187,17 +207,17 @@ INSERT INTO `wizyta` (`ID_wizyty`, `PESEL`, `ID_lekarza`, `Numer_sali`, `Rodzaj_
 (3, '68050758045', 3, 9, 'Zabieg', 'Ból zęba ', '2020-05-19', '08:00:00', 'Ból zęba ', 'Plomba światłoczuła ', '-brak'),
 (4, '94112370775', 1, 3, 'Konsultacja', 'Wysypka', '2020-05-19', '08:00:00', 'Uczulenie na sól', 'Odczulanie', '3 dni'),
 (5, '05310482498', 4, 5, 'Badanie', 'Złamanie z przemieszczeniem', '2020-05-19', '08:00:00', '', 'Nastawianie kości,gips', '3 mies'),
-(6, '91072850905', 5, 3, 'Badanie', 'Świąd', '2020-05-19', '08:00:00', 'Uczulenie na pyłki brzozy', 'Odczulenie ', '2 dni'),
-(7, '10291869617', 4, 5, 'Badanie', 'Zawroty głowy,wymioty złe samopoczucie', '2020-05-19', '09:00:00', 'Rak jelita grubego ', 'Przepisanie chemioterapii', 'Bezterminowe'),
+(6, '91072850905', 5, 8, 'Badanie', 'Świąd', '2020-05-19', '08:00:00', 'Uczulenie na pyłki brzozy', 'Odczulenie ', '2 dni'),
+(7, '10291869617', 4, 5, 'Badanie', 'Zawroty głowy,wymioty złe samopoczucie', '2020-05-19', '08:30:00', 'Rak jelita grubego ', 'Przepisanie chemioterapii', 'Bezterminowe'),
 (8, '75070671795', 5, 3, 'Zabieg', 'Usuwanie czerniaka', '2020-05-19', '08:30:00', 'Czerniak', 'Usunięcie czerniaka', '-brak'),
 (9, '91072850905', 5, 8, 'Kontrolna', '-brak', '2020-05-26', '09:00:00', '-brak', '-brak', '-brak'),
 (10, '84102832862', 6, 9, 'Zabieg', 'Ból zęba ', '2020-05-19', '08:00:00', 'Martwy ząb', 'Wyrwanie', '1 dzień'),
 (11, '59050555596', 1, 1, 'Konsultacja', 'Ból żołądka', '2020-05-19', '08:30:00', 'Zatrucie', 'Przepisano leki', '1 tyg'),
 (12, '83081582452', 3, 9, 'Konsultacja', 'Krwawienie dziąseł', '2020-05-19', '08:30:00', 'Paradontoza', 'Przepisanie pasty i maści', '-brak'),
-(13, '14291345894', 6, 9, 'Zabieg', 'Ból zęba', '2020-05-26', '08:30:00', '', 'Wyrwanie zęba', '-brak'),
-(14, '75070671795', 6, 8, 'Kontrolna', 'Ból zęba', '2020-05-25', '09:00:00', '-brak', 'fluoryzacja', '-brak'),
-(15, '59050555596', 3, 9, 'Zabieg', 'Zbyt żółte zęby ', '2020-05-21', '11:00:00', '-brak', 'wybielanie zębów', '-brak'),
-(16, '83081582452', 3, 7, 'Konsultacja', 'Ból dziąseł', '2020-05-22', '11:30:00', 'Obrzęk dziąseł', 'Przepisanie maści i ziół', '-brak');
+(13, '14291345894', 6, 9, 'Zabieg', 'Ból zęba', '2020-05-26', '08:00:00', '', 'Wyrwanie zęba', '-brak'),
+(14, '75070671795', 6, 8, 'Kontrolna', 'Ból zęba', '2020-05-25', '08:00:00', '-brak', 'fluoryzacja', '-brak'),
+(15, '59050555596', 3, 9, 'Zabieg', 'Zbyt żółte zęby ', '2020-05-21', '09:00:00', '-brak', 'wybielanie zębów', '-brak'),
+(16, '83081582452', 3, 7, 'Konsultacja', 'Ból dziąseł', '2020-05-22', '09:30:00', 'Obrzęk dziąseł', 'Przepisanie maści i ziół', '-brak');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -235,6 +255,13 @@ ALTER TABLE `przydział_lekarzy`
 ALTER TABLE `sala`
   ADD PRIMARY KEY (`Numer_sali`),
   ADD KEY `ID_poradni` (`ID_poradni`);
+
+--
+-- Indeksy dla tabeli `użytkownicy`
+--
+ALTER TABLE `użytkownicy`
+  ADD PRIMARY KEY (`Login`),
+  ADD KEY `CzyLekarz` (`CzyLekarz`);
 
 --
 -- Indeksy dla tabeli `wizyta`
@@ -289,6 +316,12 @@ ALTER TABLE `przydział_lekarzy`
 --
 ALTER TABLE `sala`
   ADD CONSTRAINT `sala_ibfk_1` FOREIGN KEY (`ID_poradni`) REFERENCES `poradnia` (`ID_poradni`);
+
+--
+-- Ograniczenia dla tabeli `użytkownicy`
+--
+ALTER TABLE `użytkownicy`
+  ADD CONSTRAINT `u@4uytkownicy_ibfk_1` FOREIGN KEY (`CzyLekarz`) REFERENCES `lekarz` (`ID_lekarza`);
 
 --
 -- Ograniczenia dla tabeli `wizyta`
