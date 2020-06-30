@@ -1,21 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
+-- version 3.5.5
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Czas generowania: 28 Cze 2020, 16:52
--- Wersja serwera: 10.4.11-MariaDB
--- Wersja PHP: 7.4.6
+-- Host: localhost
+-- Czas wygenerowania: 30 Cze 2020, 18:42
+-- Wersja serwera: 5.5.21-log
+-- Wersja PHP: 5.3.20
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Baza danych: `przychodnia`
@@ -27,14 +26,16 @@ SET time_zone = "+00:00";
 -- Struktura tabeli dla tabeli `lekarz`
 --
 
-CREATE TABLE `lekarz` (
-  `ID_lekarza` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `lekarz` (
+  `ID_lekarza` int(11) NOT NULL AUTO_INCREMENT,
   `ID_poradni` int(11) NOT NULL,
   `Imię` varchar(15) COLLATE utf8_polish_ci NOT NULL,
   `Nazwisko` varchar(15) COLLATE utf8_polish_ci NOT NULL,
   `Numer_telefonu` int(13) NOT NULL,
-  `Specjalizacja` text COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+  `Specjalizacja` text COLLATE utf8_polish_ci NOT NULL,
+  PRIMARY KEY (`ID_lekarza`),
+  KEY `ID_poradni` (`ID_poradni`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci AUTO_INCREMENT=7 ;
 
 --
 -- Zrzut danych tabeli `lekarz`
@@ -54,15 +55,16 @@ INSERT INTO `lekarz` (`ID_lekarza`, `ID_poradni`, `Imię`, `Nazwisko`, `Numer_te
 -- Struktura tabeli dla tabeli `pacjent`
 --
 
-CREATE TABLE `pacjent` (
+CREATE TABLE IF NOT EXISTS `pacjent` (
   `PESEL` varchar(11) COLLATE utf8_polish_ci NOT NULL,
   `Imię` varchar(15) COLLATE utf8_polish_ci NOT NULL,
   `Nazwisko` varchar(15) COLLATE utf8_polish_ci NOT NULL,
-  `Płeć` enum('K','M') COLLATE utf8_polish_ci NOT NULL,
+  `Płeć` enum('Mężczyzna','Kobieta') COLLATE utf8_polish_ci NOT NULL,
   `Data_urodzenia` date NOT NULL,
   `Wiek` int(3) NOT NULL,
   `Adres` text COLLATE utf8_polish_ci NOT NULL,
-  `Numer_kontaktowy` int(11) NOT NULL
+  `Numer_kontaktowy` int(11) NOT NULL,
+  PRIMARY KEY (`PESEL`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
@@ -70,20 +72,20 @@ CREATE TABLE `pacjent` (
 --
 
 INSERT INTO `pacjent` (`PESEL`, `Imię`, `Nazwisko`, `Płeć`, `Data_urodzenia`, `Wiek`, `Adres`, `Numer_kontaktowy`) VALUES
-('05310482498', 'Adrian', 'Japczyński', 'M', '2005-11-04', 15, 'Bytom ul. Kolonia Okrzei 27', 978210288),
-('10291869617', 'Brajan', 'Kozlo', 'M', '2010-09-18', 10, 'Poznań ul. Kupały 9', 295762313),
-('14291345894', 'Jan', 'Japczyński', 'M', '2014-09-13', 6, 'Bytom ul. Kolonia Okrzei 27', 978210288),
-('16232345969', 'Jessica', 'Bartoszkiewicz', 'K', '2016-03-23', 4, 'Kraków ul. Podbipięty Longinusa 138', 675962730),
-('16232471169', 'Andżela', 'Bartoszkiewicz', 'K', '2016-03-24', 4, 'Kraków ul. Podbipięty Longinusa 138', 675962730),
-('59050555596', 'Szczepan', 'Majewski', 'M', '1959-05-05', 61, 'Białystok ul. Angielska 102', 698332935),
-('68050758045', 'Bogumiła', 'Wiśniewska', 'K', '1968-05-07', 52, 'Warszawa ul. Chryzantemy 108', 988884513),
-('75070671795', 'Tomasz', 'Kozłowski', 'M', '1975-07-06', 45, 'Kielce ul. Malinowa 132', 876354082),
-('83081582452', 'Wiktor', 'Nowakowski', 'M', '1983-08-15', 37, 'Warszawa ul. Mikołaja z Długolasu 106', 717152680),
-('84102832862', 'Grażyna ', 'Żarko', 'K', '1984-10-28', 36, 'Olkusz ul. Nullo 5/19', 158843588),
-('85102760425', 'Kornelia', 'Rutkowska', 'K', '1985-10-27', 35, 'Łódź ul. Narcyzowa 114', 53090737),
-('90072764465', 'Józefa', 'Borkowska', 'M', '1990-07-27', 30, 'Poznań ul. Ikara 85', 226916650),
-('91072850905', 'Oliwia', 'Chmielewska', 'K', '1991-07-28', 29, 'Łódź ul. Husarska 125', 147483647),
-('94112370775', 'Bazyli', 'Kozłowski', 'M', '1994-11-23', 26, 'Kielce ul. Zwierzyniecka 78', 887595549);
+('05310482498', 'Adrian', 'Japczyński', 'Mężczyzna', '2005-11-04', 15, 'Bytom ul. Kolonia Okrzei 27', 978210288),
+('10291869617', 'Brajan', 'Kozlo', 'Mężczyzna', '2010-09-18', 10, 'Poznań ul. Kupały 9', 295762313),
+('14291345894', 'Jan', 'Japczyński', 'Mężczyzna', '2014-09-13', 6, 'Bytom ul. Kolonia Okrzei 27', 978210288),
+('16232345969', 'Jessica', 'Bartoszkiewicz', 'Kobieta', '2016-03-23', 4, 'Kraków ul. Podbipięty Longinusa 138', 675962730),
+('16232471169', 'Andżela', 'Bartoszkiewicz', 'Kobieta', '2016-03-24', 4, 'Kraków ul. Podbipięty Longinusa 138', 675962730),
+('59050555596', 'Szczepan', 'Majewski', 'Mężczyzna', '1959-05-05', 61, 'Białystok ul. Angielska 102', 698332935),
+('68050758045', 'Bogumiła', 'Wiśniewska', 'Kobieta', '1968-05-07', 52, 'Warszawa ul. Chryzantemy 108', 988884513),
+('75070671795', 'Tomasz', 'Kozłowski', 'Mężczyzna', '1975-07-06', 45, 'Kielce ul. Malinowa 132', 876354082),
+('83081582452', 'Wiktor', 'Nowakowski', 'Mężczyzna', '1983-08-15', 37, 'Warszawa ul. Mikołaja z Długolasu 106', 717152680),
+('84102832862', 'Grażyna ', 'Żarko', 'Kobieta', '1984-10-28', 36, 'Olkusz ul. Nullo 5/19', 158843588),
+('85102760425', 'Kornelia', 'Rutkowska', 'Kobieta', '1985-10-27', 35, 'Łódź ul. Narcyzowa 114', 53090737),
+('90072764465', 'Józefa', 'Borkowska', 'Kobieta', '1990-07-27', 30, 'Poznań ul. Ikara 85', 226916650),
+('91072850905', 'Oliwia', 'Chmielewska', 'Kobieta', '1991-07-28', 29, 'Łódź ul. Husarska 125', 147483647),
+('94112370775', 'Bazyli', 'Kozłowski', 'Mężczyzna', '1994-11-23', 26, 'Kielce ul. Zwierzyniecka 78', 887595549);
 
 -- --------------------------------------------------------
 
@@ -91,12 +93,13 @@ INSERT INTO `pacjent` (`PESEL`, `Imię`, `Nazwisko`, `Płeć`, `Data_urodzenia`,
 -- Struktura tabeli dla tabeli `poradnia`
 --
 
-CREATE TABLE `poradnia` (
-  `ID_poradni` int(3) NOT NULL,
+CREATE TABLE IF NOT EXISTS `poradnia` (
+  `ID_poradni` int(3) NOT NULL AUTO_INCREMENT,
   `Nazwa` varchar(30) COLLATE utf8_polish_ci NOT NULL,
   `Rodzaj_poradni` enum('Prywatna','Publiczna') COLLATE utf8_polish_ci NOT NULL,
-  `Opis` text COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+  `Opis` text COLLATE utf8_polish_ci NOT NULL,
+  PRIMARY KEY (`ID_poradni`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci AUTO_INCREMENT=4 ;
 
 --
 -- Zrzut danych tabeli `poradnia`
@@ -113,9 +116,11 @@ INSERT INTO `poradnia` (`ID_poradni`, `Nazwa`, `Rodzaj_poradni`, `Opis`) VALUES
 -- Struktura tabeli dla tabeli `przydział_lekarzy`
 --
 
-CREATE TABLE `przydział_lekarzy` (
+CREATE TABLE IF NOT EXISTS `przydział_lekarzy` (
   `ID_lekarza` int(3) NOT NULL,
-  `ID_poradni` int(3) NOT NULL
+  `ID_poradni` int(3) NOT NULL,
+  KEY `ID_lekarza` (`ID_lekarza`),
+  KEY `ID_poradni` (`ID_poradni`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
@@ -136,10 +141,12 @@ INSERT INTO `przydział_lekarzy` (`ID_lekarza`, `ID_poradni`) VALUES
 -- Struktura tabeli dla tabeli `sala`
 --
 
-CREATE TABLE `sala` (
+CREATE TABLE IF NOT EXISTS `sala` (
   `Numer_sali` int(3) NOT NULL,
   `ID_poradni` int(3) NOT NULL,
-  `Typ_sali` enum('Gabinet','Zabiegowa') COLLATE utf8_polish_ci NOT NULL
+  `Typ_sali` enum('Gabinet','Zabiegowa') COLLATE utf8_polish_ci NOT NULL,
+  PRIMARY KEY (`Numer_sali`),
+  KEY `ID_poradni` (`ID_poradni`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
@@ -163,10 +170,12 @@ INSERT INTO `sala` (`Numer_sali`, `ID_poradni`, `Typ_sali`) VALUES
 -- Struktura tabeli dla tabeli `użytkownicy`
 --
 
-CREATE TABLE `użytkownicy` (
+CREATE TABLE IF NOT EXISTS `użytkownicy` (
   `Login` varchar(15) COLLATE utf8_polish_ci NOT NULL,
   `Hasło` varchar(20) COLLATE utf8_polish_ci NOT NULL,
-  `CzyLekarz` int(11) DEFAULT NULL
+  `CzyLekarz` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Login`),
+  KEY `CzyLekarz` (`CzyLekarz`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
@@ -183,8 +192,8 @@ INSERT INTO `użytkownicy` (`Login`, `Hasło`, `CzyLekarz`) VALUES
 -- Struktura tabeli dla tabeli `wizyta`
 --
 
-CREATE TABLE `wizyta` (
-  `ID_wizyty` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `wizyta` (
+  `ID_wizyty` int(10) NOT NULL AUTO_INCREMENT,
   `PESEL` varchar(11) COLLATE utf8_polish_ci NOT NULL,
   `ID_lekarza` int(3) NOT NULL,
   `Numer_sali` int(3) NOT NULL,
@@ -194,8 +203,12 @@ CREATE TABLE `wizyta` (
   `Godzina_wizyty` time NOT NULL,
   `Choroba` text COLLATE utf8_polish_ci NOT NULL,
   `Leczenie` text COLLATE utf8_polish_ci NOT NULL,
-  `Zwolnienie` text COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+  `Zwolnienie` text COLLATE utf8_polish_ci NOT NULL,
+  PRIMARY KEY (`ID_wizyty`),
+  KEY `PESEL` (`PESEL`),
+  KEY `ID_lekarza` (`ID_lekarza`),
+  KEY `Numer_sali` (`Numer_sali`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci AUTO_INCREMENT=17 ;
 
 --
 -- Zrzut danych tabeli `wizyta`
@@ -218,81 +231,6 @@ INSERT INTO `wizyta` (`ID_wizyty`, `PESEL`, `ID_lekarza`, `Numer_sali`, `Rodzaj_
 (14, '75070671795', 6, 8, 'Kontrolna', 'Ból zęba', '2020-05-25', '08:00:00', '-brak', 'fluoryzacja', '-brak'),
 (15, '59050555596', 3, 9, 'Zabieg', 'Zbyt żółte zęby ', '2020-05-21', '09:00:00', '-brak', 'wybielanie zębów', '-brak'),
 (16, '83081582452', 3, 7, 'Konsultacja', 'Ból dziąseł', '2020-05-22', '09:30:00', 'Obrzęk dziąseł', 'Przepisanie maści i ziół', '-brak');
-
---
--- Indeksy dla zrzutów tabel
---
-
---
--- Indeksy dla tabeli `lekarz`
---
-ALTER TABLE `lekarz`
-  ADD PRIMARY KEY (`ID_lekarza`),
-  ADD KEY `ID_poradni` (`ID_poradni`);
-
---
--- Indeksy dla tabeli `pacjent`
---
-ALTER TABLE `pacjent`
-  ADD PRIMARY KEY (`PESEL`);
-
---
--- Indeksy dla tabeli `poradnia`
---
-ALTER TABLE `poradnia`
-  ADD PRIMARY KEY (`ID_poradni`);
-
---
--- Indeksy dla tabeli `przydział_lekarzy`
---
-ALTER TABLE `przydział_lekarzy`
-  ADD KEY `ID_lekarza` (`ID_lekarza`),
-  ADD KEY `ID_poradni` (`ID_poradni`);
-
---
--- Indeksy dla tabeli `sala`
---
-ALTER TABLE `sala`
-  ADD PRIMARY KEY (`Numer_sali`),
-  ADD KEY `ID_poradni` (`ID_poradni`);
-
---
--- Indeksy dla tabeli `użytkownicy`
---
-ALTER TABLE `użytkownicy`
-  ADD PRIMARY KEY (`Login`),
-  ADD KEY `CzyLekarz` (`CzyLekarz`);
-
---
--- Indeksy dla tabeli `wizyta`
---
-ALTER TABLE `wizyta`
-  ADD PRIMARY KEY (`ID_wizyty`),
-  ADD KEY `PESEL` (`PESEL`),
-  ADD KEY `ID_lekarza` (`ID_lekarza`),
-  ADD KEY `Numer_sali` (`Numer_sali`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT dla tabeli `lekarz`
---
-ALTER TABLE `lekarz`
-  MODIFY `ID_lekarza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT dla tabeli `poradnia`
---
-ALTER TABLE `poradnia`
-  MODIFY `ID_poradni` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT dla tabeli `wizyta`
---
-ALTER TABLE `wizyta`
-  MODIFY `ID_wizyty` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Ograniczenia dla zrzutów tabel
@@ -330,7 +268,6 @@ ALTER TABLE `wizyta`
   ADD CONSTRAINT `wizyta_ibfk_1` FOREIGN KEY (`PESEL`) REFERENCES `pacjent` (`PESEL`),
   ADD CONSTRAINT `wizyta_ibfk_2` FOREIGN KEY (`ID_lekarza`) REFERENCES `lekarz` (`ID_lekarza`),
   ADD CONSTRAINT `wizyta_ibfk_3` FOREIGN KEY (`Numer_sali`) REFERENCES `sala` (`Numer_sali`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

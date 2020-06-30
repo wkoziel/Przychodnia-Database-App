@@ -11,17 +11,19 @@ namespace Przychodnia.Functions
         {
             InitializeComponent();
             ComboBoxFill();
+            FunctionName.Content = "Dodaj wizytę";
         }
 
         public AppointmentForm(int index)
         {
             InitializeComponent();
+            FunctionName.Content = "Edytuj wizytę";
             ComboBoxFill();
             ID_wizytyTextBox.Text = Lists.Appointments[index].ID_wizyty.ToString();
             PESEL_Combobox.SelectedItem = Lists.Appointments[index].PESEL.ToString();
             NrSaliComboBox.SelectedItem = Lists.Appointments[index].Numer_sali;
             IdLekarzaComboBox.SelectedItem = Lists.Appointments[index].ID_lekarza;
-            DataWizytyCombobox.SelectedItem = Lists.Appointments[index].Data_wizyty.ToString(); //Tu trzeba poprawić bo jakaś dziwna konwersja jest
+            DataWizytyCombobox.SelectedItem = Lists.Appointments[index].Data_wizyty;
             GodzWizytyComboBox.SelectedItem = Lists.Appointments[index].Godzina_wizyty.ToString();
             RodzajWizytyComboBox.SelectedItem = Lists.Appointments[index].Rodzaj_wizyty.ToString();
             OpisTextBox.Text = Lists.Appointments[index].Opis_dolegliwosci.ToString();
@@ -65,6 +67,20 @@ namespace Przychodnia.Functions
             GodzWizytyComboBox.Items.Add("16:00:00");
             GodzWizytyComboBox.Items.Add("16:30:00");
             GodzWizytyComboBox.Items.Add("17:00:00");
+
+            for (int i = 1; i < 10; i++)
+            {
+                //DataWizytyCombobox.Items.Add("2020-05-0" + i);
+                DataWizytyCombobox.Items.Add("0"+i+".05.2020");
+            }
+                
+
+            for (int i = 10; i < 31; i++)
+            {
+                //DataWizytyCombobox.Items.Add("2020-05-" + i);
+                DataWizytyCombobox.Items.Add( i + ".05.2020");
+            }
+                
 
             RodzajWizytyComboBox.Items.Add("Badanie");
             RodzajWizytyComboBox.Items.Add("Zabieg");
