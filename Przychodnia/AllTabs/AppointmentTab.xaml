@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="1000">
     <Grid>
-        <ListView x:Name="AppointmentListView" >
+        <ListView x:Name="AppointmentListView" SelectionChanged="AppointmentIndexChange">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding ID_wizyty}" Header="ID wizyty" Width="60" />

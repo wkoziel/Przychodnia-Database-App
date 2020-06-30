@@ -107,14 +107,17 @@ namespace Przychodnia
 
         private void EditButtonClick(object sender, RoutedEventArgs e)
         {
-            if (TabsComboBox.SelectedIndex == 1)
+            if (TabsComboBox.SelectedIndex == 0)
             {
-                PatientForm window = new PatientForm();
+                
+                int index = AppointmentTab.AppointmentIndex;
+                AppointmentForm window = new AppointmentForm(index);
                 window.Show();
             }
-            else if (TabsComboBox.SelectedIndex == 0)
+            else if (TabsComboBox.SelectedIndex == 1)
             {
-                AppointmentForm window = new AppointmentForm();
+                int index = AppointmentTab.AppointmentIndex;
+                PatientForm window = new PatientForm(index);
                 window.Show();
             }
         }

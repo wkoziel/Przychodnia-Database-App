@@ -2,7 +2,6 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
-
 namespace Przychodnia.Functions
 {
 
@@ -16,10 +15,21 @@ namespace Przychodnia.Functions
 
         public AppointmentForm(int index)
         {
+            InitializeComponent();
             ComboBoxFill();
+            ID_wizytyTextBox.Text = Lists.Appointments[index].ID_wizyty.ToString();
+            PESEL_Combobox.SelectedItem = Lists.Appointments[index].PESEL.ToString();
+            NrSaliComboBox.SelectedItem = Lists.Appointments[index].Numer_sali;
+            IdLekarzaComboBox.SelectedItem = Lists.Appointments[index].ID_lekarza;
+            DataWizytyCombobox.SelectedItem = Lists.Appointments[index].Data_wizyty.ToString(); //Tu trzeba poprawić bo jakaś dziwna konwersja jest
+            GodzWizytyComboBox.SelectedItem = Lists.Appointments[index].Godzina_wizyty.ToString();
+            RodzajWizytyComboBox.SelectedItem = Lists.Appointments[index].Rodzaj_wizyty.ToString();
+            OpisTextBox.Text = Lists.Appointments[index].Opis_dolegliwosci.ToString();
+            ChorobaTextBox.Text = Lists.Appointments[index].Choroba.ToString();
+            LeczenieTextBox.Text = Lists.Appointments[index].Leczenie.ToString();
+            ZwolnienieTextBox.Text = Lists.Appointments[index].Zwolnienie.ToString();
 
         }
-
         private void XButtonClick(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -27,11 +37,6 @@ namespace Przychodnia.Functions
 
         private void ComboBoxFill()
         {
-            for (int i = 0; i < 32; i++)
-                DzienWComboBox.Items.Add(i);
-            for (int i = 1920; i < 2021; i++)
-                RokWComboBox.Items.Add(i);
-
             foreach (var item in Lists.Patients)
                 PESEL_Combobox.Items.Add(item.PESEL);
 
@@ -64,39 +69,7 @@ namespace Przychodnia.Functions
             RodzajWizytyComboBox.Items.Add("Badanie");
             RodzajWizytyComboBox.Items.Add("Zabieg");
             RodzajWizytyComboBox.Items.Add("Kontrola");
-
-            MiesiacWComboBox.Items.Add("Styczeń");
-            MiesiacWComboBox.Items.Add("Luty");
-            MiesiacWComboBox.Items.Add("Marzec");
-            MiesiacWComboBox.Items.Add("Kwiecień");
-            MiesiacWComboBox.Items.Add("Maj");
-            MiesiacWComboBox.Items.Add("Czerwiec");
-            MiesiacWComboBox.Items.Add("Lipiec");
-            MiesiacWComboBox.Items.Add("Sierpień");
-            MiesiacWComboBox.Items.Add("Wrzesień");
-            MiesiacWComboBox.Items.Add("Październik");
-            MiesiacWComboBox.Items.Add("Listopad");
-            MiesiacWComboBox.Items.Add("Grudzień");
         }
 
-        private void DzienUrComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void WiekComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void GodzWizytyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void dataComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

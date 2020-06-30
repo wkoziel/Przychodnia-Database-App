@@ -14,7 +14,7 @@
             <RowDefinition Height="123*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Nazwa funkcji" FontSize="30" Margin="10 5" Grid.RowSpan="4"/>
+        <Label x:Name="FunctionName" Content="Nazwa funkcji" FontSize="30" Margin="10 5" Grid.RowSpan="4"/>
         <Button Content="X"  Width="30" Height="30" Margin="0,5,5,0" Click="XButtonClick" HorizontalAlignment="Right" VerticalAlignment="Top"/>
 
         <Grid Margin="32,60,34,20" Background="White" Grid.RowSpan="4">
@@ -29,7 +29,7 @@
 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="ID wizyty" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
-                    <TextBox x:Name="ID_wizyty" Text="" FontSize="16" MaxLength="11"/>
+                    <TextBox x:Name="ID_wizytyTextBox" Text="" FontSize="16" MaxLength="11"/>
                 </WrapPanel>
 
                 <WrapPanel Orientation="Vertical" Margin="5">
@@ -39,7 +39,7 @@
 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="Nr sali" HorizontalAlignment="Center" Width="161" Height="30" FontSize="16"/>
-                    <ComboBox x:Name="NrSaliComboBox" Width="156" Text="Wiek" Height="24" SelectionChanged="WiekComboBox_SelectionChanged"/>
+                    <ComboBox x:Name="NrSaliComboBox" Width="156" Text="Wiek" Height="24" />
                 </WrapPanel>
 
                 <WrapPanel Orientation="Vertical" Margin="5">
@@ -64,16 +64,17 @@
                     <Label Content="Data wizyty" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
 
                     <WrapPanel Orientation="Horizontal">
-                        <ComboBox x:Name="DzienWComboBox" Width="30"/>
-                        <ComboBox x:Name="MiesiacWComboBox" Width="60"/>
-                        <ComboBox x:Name="RokWComboBox" Width="40"/>
+                        <ComboBox x:Name="DataWizytyCombobox" Width="100"/>
                     </WrapPanel>
                     <Label Content="Godzina wizyty" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
 
-                    <ComboBox x:Name="GodzWizytyComboBox" HorizontalAlignment="Left" Width="102" SelectionChanged="GodzWizytyComboBox_SelectionChanged"/>
+                    <ComboBox x:Name="GodzWizytyComboBox" HorizontalAlignment="Left" Width="102" />
                     <Label Content="Rodzaj wizyty" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
-                    <ComboBox x:Name="RodzajWizytyComboBox" HorizontalAlignment="Left" Width="102" SelectionChanged="GodzWizytyComboBox_SelectionChanged"/>
-
+                    <ComboBox x:Name="RodzajWizytyComboBox" HorizontalAlignment="Left" Width="102"/>
+                    <WrapPanel Orientation="Vertical" Margin="5">
+                        <Label Content="Opis dolegliwości" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
+                        <TextBox x:Name="OpisTextBox" Text="" FontSize="16"/>
+                    </WrapPanel>
                 </WrapPanel>
             </StackPanel>
 
@@ -93,8 +94,7 @@
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="Zwolnienie" HorizontalAlignment="Center" Width="161" Height="30" FontSize="16"/>
                     <TextBox x:Name="ZwolnienieTextBox" Text="" FontSize="16" />
-                    <Label Content="Opis dolegliwości" HorizontalAlignment="Center" Width="150" Height="30" FontSize="16"/>
-                    <TextBox x:Name="OpisTextBox" Text="" FontSize="16"/>
+                    
                 </WrapPanel>
 
 

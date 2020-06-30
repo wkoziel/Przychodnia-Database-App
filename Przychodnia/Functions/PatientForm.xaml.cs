@@ -25,6 +25,12 @@ namespace Przychodnia.Functions
             ComboBoxFill();
         }
 
+        public PatientForm(int index)
+        {
+            InitializeComponent();
+            ComboBoxFill();
+        }
+
         private void XButtonClick(object sender, RoutedEventArgs e)
         {
             this.Close();
