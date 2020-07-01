@@ -8,7 +8,7 @@
         Title="Wizyta" Height="500" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     
     <Grid Background="AliceBlue">
-        <Label x:Name="FunctionName" Content="Nazwa funkcji" FontSize="30" Margin="10 5" Grid.RowSpan="4"/>
+        <Label x:Name="FunctionName" Content="Nazwa funkcji" FontSize="30" Margin="10 5" Grid.RowSpan="4" />
         <Button Content="X"  Width="30" Height="30" Margin="0,5,5,0" Click="XButtonClick" HorizontalAlignment="Right" VerticalAlignment="Top"/>
 
         <Grid Margin="32,60,34,20" Background="White" Grid.RowSpan="4">
@@ -23,7 +23,7 @@
 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="ID wizyty:" HorizontalAlignment="Left" Width="150" FontSize="16"/>
-                    <TextBox x:Name="ID_wizytyTextBox" Text="" FontSize="16" MaxLength="11" Width="180"/>
+                    <TextBox x:Name="ID_wizytyTextBox" Text="" FontSize="16" MaxLength="11" Width="180" />
                 </WrapPanel>
 
                 <WrapPanel Orientation="Vertical" Margin="5">

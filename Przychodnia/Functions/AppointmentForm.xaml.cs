@@ -18,7 +18,7 @@ namespace Przychodnia.Functions
             InitializeComponent();
             ComboBoxFill();
             FunctionName.Content = "Dodaj wizytę";
-            ID_wizytyTextBox.Text = (Lists.Appointments.Count + 1).ToString();
+            ID_wizytyTextBox.Text = (Lists.Appointments[Lists.Appointments.Count - 1].ID_wizyty  + 1).ToString();
             ID_wizytyTextBox.IsReadOnly = true;
         }
         public AppointmentForm(int index)
@@ -26,6 +26,7 @@ namespace Przychodnia.Functions
             InitializeComponent();
             FunctionName.Content = "Edytuj wizytę";
             ComboBoxFill();
+            ID_wizytyTextBox.IsReadOnly = true;
             ID_wizytyTextBox.Text = Lists.Appointments[index].ID_wizyty.ToString();
             PESEL_Combobox.SelectedItem = Lists.Appointments[index].PESEL.ToString();
             NrSaliComboBox.SelectedItem = Lists.Appointments[index].Numer_sali;

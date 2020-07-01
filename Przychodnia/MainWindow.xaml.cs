@@ -143,9 +143,15 @@ namespace Przychodnia
                 if (result == MessageBoxResult.Yes)
                 {
                     int index = PatientTab.PatientIndex;
-                    PatientRepo.DeletePatient(Lists.Patients[index].PESEL);
-                    TableSpace.Children.Clear();
-                    TableSpace.Children.Add(new PatientTab());
+                    if (DeletePeselCheck(Lists.Patients[index].PESEL) == true)
+                        MessageBox.Show("Nie można usunąć pacjenta z wizytami!");
+                    else
+                    {
+                        PatientRepo.DeletePatient(Lists.Patients[index].PESEL);
+                        TableSpace.Children.Clear();
+                        TableSpace.Children.Add(new PatientTab());
+                    }
+
                 }
             }
         }
@@ -159,6 +165,14 @@ namespace Przychodnia
         {
             TableSpace.Children.Clear();
             TableSpace.Children.Add(new PatientTab());
+        }
+        
+        bool DeletePeselCheck(string Pesel)
+        {
+            foreach (var item in Lists.Appointments)
+                if (item.PESEL == Pesel)
+                    return true;             
+            return false;
         }
     }
 }

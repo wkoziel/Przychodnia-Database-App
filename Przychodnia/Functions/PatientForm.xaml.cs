@@ -34,6 +34,7 @@ namespace Przychodnia.Functions
             InitializeComponent();
             FunctionName.Content = "Edytuj pacjenta";
             ComboBoxFill();
+            PESELTextBox.IsReadOnly = true;
             PESELTextBox.Text = Lists.Patients[index].PESEL.ToString();
             ImieTextBox.Text = Lists.Patients[index].Imie.ToString();
             NazwiskoTextBox.Text = Lists.Patients[index].Nazwisko.ToString();
@@ -81,6 +82,8 @@ namespace Przychodnia.Functions
         {
             if (PESELTextBox.Text == "")
                 MessageBox.Show("Pole PESEL jest puste!");
+            else if(ChceckPesel(PESELTextBox.Text, ImieTextBox.Text) == true && FunctionName.Content.ToString() != "Edytuj pacjenta")
+                MessageBox.Show("Podany PESEL istnieje już w bazie");
             else if (PESELTextBox.Text.Length < 11)
                 MessageBox.Show("Pole PESEL musi zawierać 11 cyfr!");
             else if (ImieTextBox.Text == "")
@@ -130,6 +133,13 @@ namespace Przychodnia.Functions
             }
         }
 
+        bool ChceckPesel(string pesel, string imie)
+        {
+            foreach (var item in Lists.Patients)
+                if (item.PESEL == pesel && item.Imie != imie)
+                    return true;
+            return false;
+        }
 
         private void PESELTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         { 
