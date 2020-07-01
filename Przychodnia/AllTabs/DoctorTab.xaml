@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="1200">
     <Grid>
-        <ListView x:Name="DoctorListView">
+        <ListView x:Name="DoctorListView" SelectionChanged="DoctorListSelection">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding ID_lekarza}" Header="ID lekarza" Width="60" />

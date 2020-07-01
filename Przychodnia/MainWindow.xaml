@@ -3,12 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Przychodnia"
-        xmlns:table="clr-namespace:Przychodnia.Tabs"
         mc:Ignorable="d"
-        Title="Przychodnia" Height="700" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid x:Name="Window" Background="AliceBlue">
+        Title="Przychodnia" Height="700" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Images/clinic.ico">
 
+    <Grid x:Name="Window" Background="#99ccff">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.12*"/>
             <RowDefinition Height="0.88*"/>
@@ -21,22 +19,21 @@
                 <ColumnDefinition  />
             </Grid.ColumnDefinitions>
 
-            <ComboBox Name="TabsComboBox" Grid.Column="0" Width="250" Height="25" SelectedIndex="0" SelectionChanged="ChangeTableComboBox"/>
+            <ComboBox Name="TabsComboBox" Grid.Column="0" Width="250" Height="25" SelectedIndex="0" SelectionChanged="ChangeTableComboBox" Background="White"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="AddContent" Content="Dodaj" Click="AddNewButtonClick" Width="150" Margin="10"/>
-                <Button x:Name="EditContent" Content="Edytuj" Click="EditButtonClick" Width="150" Margin="10"/>
-                <Button x:Name="DeleteContent" Content="Usuń" Click="DeleteButtonClick" Width="150" Margin="10"/>
-                <Button x:Name="Opcjonalne1" Content="Opcja1"  Width="150" Margin="10"/>
-                <Button x:Name="Opcjonalne2" Content="Opcja2"  Width="150" Margin="10"/>
+                <Button x:Name="AddContent" Content="Dodaj" Click="AddNewButtonClick" Width="150" Margin="10" Background="White" FontSize="16" FontWeight="Bold"/>
+                <Button x:Name="EditContent" Content="Edytuj" Click="EditButtonClick" Width="150" Margin="10" Background="White" FontSize="16" FontWeight="Bold"/>
+                <Button x:Name="DeleteContent" Content="Usuń" Click="DeleteButtonClick" Width="150" Margin="10" Background="White" FontSize="16" FontWeight="Bold"/>
+                <Button x:Name="TodayAppointmentsButton" Content="Dzisiejsze wizyty" Click="TodayAppointmentsClick" Width="150" Margin="10" Background="White" FontSize="16" FontWeight="Bold"/>
+                <Button x:Name="PatientAppointmentsButton" Content="Wizyty Pacjenta"  Click="PersonsAppointmentsClick" Width="150" Margin="10" Background="White" FontSize="16" FontWeight="Bold" />
             </StackPanel>
         </Grid>
 
         <Grid x:Name="TableSpace" x:FieldModifier="public" Grid.Row="1" Margin="10 20 10 10" />
 
         <Grid Grid.Row="2">
-            <Label Content="Jesteś zalogowany jako x" x:Name="LoginAs" FontSize="12" />
+            <Label Content="Jesteś zalogowany/a jako " x:Name="LoginAs" FontSize="12" />
         </Grid>
-        
-    </Grid>
 
+    </Grid>
 </Window>

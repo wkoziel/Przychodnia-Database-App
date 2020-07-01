@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using Przychodnia.DAL.Repozytoria;
-using Przychodnia.AllTabs;
-using Przychodnia.Tabs;
 
 namespace Przychodnia.Functions
 {
@@ -22,6 +11,8 @@ namespace Przychodnia.Functions
     {
         public delegate void DataChangedEventHandler(object sender, EventArgs e);
         public event DataChangedEventHandler DataChanged;
+        
+        //Konstuktor dla dodawania nowego pacjenta - pola okna są puste
         public PatientForm()
         {
             InitializeComponent();
@@ -29,6 +20,7 @@ namespace Przychodnia.Functions
             ComboBoxFill();
         }
 
+        //Konstruktor dla edycji pacjenta - wypełnia okno danymi pacjenta
         public PatientForm(int index)
         {
             InitializeComponent();
@@ -47,11 +39,13 @@ namespace Przychodnia.Functions
             RokUrComboBox.SelectedItem = Lists.Patients[index].Data_urodzenia.Substring(6, 4).ToString();
         }
 
+        //Metoda zamykająca okno
         private void XButtonClick(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        //Wypełnienie combobox'ów danymi
         private void ComboBoxFill()
         {
             PlecComboBox.Items.Add("Kobieta");
@@ -78,6 +72,7 @@ namespace Przychodnia.Functions
             MiesiacUrComboBox.Items.Add("Gru");
         }
 
+        //Metoda zapisująca zmiany - zwiera zabezpieczenia danych
         private void SavePatientButtonClick(object sender, RoutedEventArgs e)
         {
             if (PESELTextBox.Text == "")
@@ -133,6 +128,7 @@ namespace Przychodnia.Functions
             }
         }
 
+        //Metoda sprawdzająca czy pesel istnieje już w bazie
         bool ChceckPesel(string pesel, string imie)
         {
             foreach (var item in Lists.Patients)
@@ -141,22 +137,25 @@ namespace Przychodnia.Functions
             return false;
         }
 
+        //Zabezpieczenie PESEL'u
         private void PESELTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         { 
                 Regex regex = new Regex("[^0-9]+");
                 e.Handled = regex.IsMatch(e.Text);
         }
-
+        
+        //Zabezpieczenie Numeru kontaktowego
         private void NumerKontaktowyTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void WiekTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        //Po wybraniu roku urodzenia wiek uzupełnia się automatycznie
+        private void YearSelected(object sender, SelectionChangedEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
+            DateTime now = DateTime.Now;
+            WiekTextBox.Text = (now.Year - int.Parse(RokUrComboBox.SelectedItem.ToString())).ToString();
         }
     }
 }

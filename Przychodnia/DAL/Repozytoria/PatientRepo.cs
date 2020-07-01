@@ -7,6 +7,7 @@ namespace Przychodnia.DAL.Repozytoria
 {
     class PatientRepo
     {
+        //Pobiera wszystkich pacjentów z bazy
         public static List<Patient> GetAllPatients()
         {
             List<Patient> patients = new List<Patient>();
@@ -27,6 +28,7 @@ namespace Przychodnia.DAL.Repozytoria
             return patients;
         }
 
+        //Dodaje nowego pacjenta do bazy
         public static void AddNewPatient(string pesel, string imie, string nazwisko, string plec, string rok, string miesiac, string dzien, string wiek, string adres, string numer)
         {
             if (int.Parse(miesiac) < 10)
@@ -45,6 +47,7 @@ namespace Przychodnia.DAL.Repozytoria
             catch { }
         }
 
+        //Uaktualnia pacjenta w bazie
         public static void UpdatePatient(string pesel, string imie, string nazwisko, string plec, string rok, string miesiac, string dzien, string wiek, string adres, string numer)
         {
             if (int.Parse(miesiac) < 10)
@@ -63,6 +66,7 @@ namespace Przychodnia.DAL.Repozytoria
             catch { }
         }
 
+        //Usuwa pacjenta z bazy
         public static void DeletePatient(string pesel)
         {
             try

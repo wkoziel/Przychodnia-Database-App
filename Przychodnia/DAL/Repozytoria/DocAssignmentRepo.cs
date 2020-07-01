@@ -7,7 +7,7 @@ namespace Przychodnia.DAL.Repozytoria
 {
     class DocAssignmentRepo
     {
-        private const string ALL_DOCASSIGMENTS_QUERY = "SELECT * FROM przydział_lekarzy";
+        //Pobiera przydział lekarzy z bazy
         public static List<DocAssignment> GetAllDocAssignments()
         {
             List<DocAssignment> docassigments = new List<DocAssignment>();
@@ -16,7 +16,7 @@ namespace Przychodnia.DAL.Repozytoria
                 using (var connection = DBConnection.Instance.Connection)
                 {
                     DBConnection.Instance.printBuilder();
-                    MySqlCommand command = new MySqlCommand(ALL_DOCASSIGMENTS_QUERY, connection);
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM przydział_lekarzy", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
@@ -25,13 +25,6 @@ namespace Przychodnia.DAL.Repozytoria
                 }
             }
             catch { }
-
-            //Console print
-            //foreach (var item in docassigments)
-            //{
-            //    Debug.WriteLine(item.ToString());
-            //}
-
             return docassigments;
         }
     }

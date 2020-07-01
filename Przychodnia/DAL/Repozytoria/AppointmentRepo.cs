@@ -7,7 +7,7 @@ namespace Przychodnia.DAL.Repozytoria
 {
     class AppointmentRepo
     {
-        private const string ALL_APPOINTMENTS_QUERY = "SELECT * FROM wizyta";
+        //Pobiera wszystkie wizyty z bazy
         public static List<Appointment> GetAllAppoitments()
         {
             List<Appointment> appointments = new List<Appointment>();
@@ -16,7 +16,7 @@ namespace Przychodnia.DAL.Repozytoria
                 using (var connection = DBConnection.Instance.Connection)
                 {
                     DBConnection.Instance.printBuilder();
-                    MySqlCommand command = new MySqlCommand(ALL_APPOINTMENTS_QUERY, connection);
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM wizyta", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
@@ -25,16 +25,10 @@ namespace Przychodnia.DAL.Repozytoria
                 }
             }
             catch { }
-
-            //Console print
-            //foreach (var item in appointments)
-            //{
-            //    Debug.WriteLine(item.ToString());
-            //}
-
             return appointments;
         }
 
+        //Dodaje nową wizytę do bazy
         public static void AddNewAppointment(string idwizyty, string pesel, string idlekarza, string nrsali, string rodzaj, string dolegliwosci, string data, string godzina, string choroba, string leczenie, string zwolnienie)
         {
             try
@@ -51,6 +45,7 @@ namespace Przychodnia.DAL.Repozytoria
             catch { }
         }
 
+        //Uaktualnie wizytę w bazie
         public static void EditAppointment(string idwizyty, string pesel, string idlekarza, string nrsali, string rodzaj, string dolegliwosci, string data, string godzina, string choroba, string leczenie, string zwolnienie)
         {
             try
@@ -67,6 +62,7 @@ namespace Przychodnia.DAL.Repozytoria
             catch { }
         }
 
+        //Usuwa wizytę z bazy
         public static void DeleteAppointment(string idwizyty)
         {
             try

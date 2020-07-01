@@ -6,17 +6,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBox x:Name="textBox" x:FieldModifier="public" MaxLength="15"
-                 TextChanged="textBox_TextChanged"
-                 Text="{
-                        Binding Path=Text,  
+        <TextBox x:Name="textBox" x:FieldModifier="public" MaxLength="15" TextChanged="textBox_TextChanged"
+                 Text="{Binding Path=Text,  
                         Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged, 
-                        RelativeSource={
-                                        RelativeSource Mode=FindAncestor, 
-                                        AncestorType={x:Type UserControl}
-                                       }
-                     }"
-                 />
+                        RelativeSource={ RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl} }}" />
     </Grid>
 </UserControl>

@@ -8,6 +8,7 @@ namespace Przychodnia.AllTabs
 
     public partial class ClinicTab : UserControl
     {
+        //Konstruktor
         public ClinicTab()
         {
             InitializeComponent();

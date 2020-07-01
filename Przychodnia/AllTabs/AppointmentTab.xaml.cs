@@ -8,21 +8,30 @@ namespace Przychodnia.Tabs
     public partial class AppointmentTab : UserControl
     {
         static public int AppointmentIndex{get; set;}
-        public AppointmentTab()
+        
+        //Konstruktor wyświetla dane w zależności od wyboru
+        public AppointmentTab(int ViewType)
         {
             InitializeComponent();
             List<Appointment> AppointmentList = AppointmentRepo.GetAllAppoitments();
-            AppointmentListView.ItemsSource = AppointmentList;
+            if (ViewType == 1)
+                AppointmentListView.ItemsSource = AppointmentList;
+            else if (ViewType == 2)
+                AppointmentListView.ItemsSource = Lists.TodayAppointments();
+            else if (ViewType == 3)
+                AppointmentListView.ItemsSource = Lists.PatientAppointments();
+            else if (ViewType == 4)
+                AppointmentListView.ItemsSource = Lists.DoctorAppointments();
+
+
+            AppointmentListView.Items.Refresh();
         }
 
+        //Metoda przechowująca aktualnie zaznaczony index tabeli
         private void AppointmentIndexChange(object sender, SelectionChangedEventArgs e)
         {
             AppointmentIndex = AppointmentListView.SelectedIndex;
         }
 
-        private void RefreshAppointmentList()
-        {
-            AppointmentListView.Items.Refresh();
-        }
     }
 }

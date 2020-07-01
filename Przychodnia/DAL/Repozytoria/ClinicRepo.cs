@@ -7,7 +7,7 @@ namespace Przychodnia.DAL.Repozytoria
 {
     class ClinicRepo
     {
-        private const string ALL_CLINICS_QUERY = "SELECT * FROM poradnia";
+        //Pobiera wszystkie poradnie z bazy
         public static List<Clinic> GetAllClinics()
         {
             List<Clinic> clinics = new List<Clinic>();
@@ -16,7 +16,7 @@ namespace Przychodnia.DAL.Repozytoria
                 using (var connection = DBConnection.Instance.Connection)
                 {
                     DBConnection.Instance.printBuilder();
-                    MySqlCommand command = new MySqlCommand(ALL_CLINICS_QUERY, connection);
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM poradnia", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
@@ -25,13 +25,6 @@ namespace Przychodnia.DAL.Repozytoria
                 }
             }
             catch { }
-
-            //Console print
-            //foreach (var item in clinics)
-            //{
-            //    Debug.WriteLine(item.ToString());
-            //}
-
             return clinics;
         }
     }

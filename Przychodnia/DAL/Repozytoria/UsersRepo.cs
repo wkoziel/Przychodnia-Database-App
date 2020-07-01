@@ -7,7 +7,7 @@ namespace Przychodnia.DAL.Repozytoria
 {
     class UsersRepo
     {
-        private const string ALL_USERS_QUERY = "SELECT * FROM użytkownicy";
+        //Pobiera wszystkich użytkowników z bazy
         public static List<Users> GetAllUsers()
         {
             List<Users> users = new List<Users>();
@@ -16,7 +16,7 @@ namespace Przychodnia.DAL.Repozytoria
                 using (var connection = DBConnection.Instance.Connection)
                 {
                     DBConnection.Instance.printBuilder();
-                    MySqlCommand command = new MySqlCommand(ALL_USERS_QUERY, connection);
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM użytkownicy", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
@@ -25,12 +25,6 @@ namespace Przychodnia.DAL.Repozytoria
                 }
             }
             catch { }
-
-            //Console print
-            //foreach (var item in users)
-            //{
-            //    Debug.WriteLine(item.ToString());
-            //}
             return users;
         }
     }

@@ -7,7 +7,7 @@ namespace Przychodnia.DAL.Repozytoria
 {
     class DoctorRepo
     {
-        private const string ALL_DOCTORS_QUERY = "SELECT * FROM lekarz";
+        //Pobiera wszystkich lekarzy z bazy
         public static List<Doctor> GetAllDoctors()
         {
             List<Doctor> doctors = new List<Doctor>();
@@ -16,7 +16,7 @@ namespace Przychodnia.DAL.Repozytoria
                 using (var connection = DBConnection.Instance.Connection)
                 {
                     DBConnection.Instance.printBuilder();
-                    MySqlCommand command = new MySqlCommand(ALL_DOCTORS_QUERY, connection);
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM lekarz", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
@@ -25,13 +25,6 @@ namespace Przychodnia.DAL.Repozytoria
                 }
             }
             catch { }
-
-            //Console print
-            foreach (var item in doctors)
-            {
-                Debug.WriteLine(item.ToString());
-            }
-
             return doctors;
         }
     }

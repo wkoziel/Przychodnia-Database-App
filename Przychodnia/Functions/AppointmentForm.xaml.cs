@@ -1,9 +1,6 @@
-﻿using Przychodnia.DAL.Encje;
-using Przychodnia.DAL.Repozytoria;
+﻿using Przychodnia.DAL.Repozytoria;
 using System;
-using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
 namespace Przychodnia.Functions
 {
 
@@ -20,6 +17,7 @@ namespace Przychodnia.Functions
             FunctionName.Content = "Dodaj wizytę";
             ID_wizytyTextBox.Text = (Lists.Appointments[Lists.Appointments.Count - 1].ID_wizyty  + 1).ToString();
             ID_wizytyTextBox.IsReadOnly = true;
+
         }
         public AppointmentForm(int index)
         {
@@ -76,17 +74,11 @@ namespace Przychodnia.Functions
             GodzWizytyComboBox.Items.Add("17:00:00");
 
             for (int i = 1; i < 10; i++)
-            {
-                //DataWizytyCombobox.Items.Add("2020-05-0" + i);
-                DataWizytyCombobox.Items.Add("0"+i+".05.2020");
-            }
+                DataWizytyCombobox.Items.Add("0"+i+".07.2020");
                 
 
             for (int i = 10; i < 31; i++)
-            {
-                //DataWizytyCombobox.Items.Add("2020-05-" + i);
-                DataWizytyCombobox.Items.Add( i + ".05.2020");
-            }
+                DataWizytyCombobox.Items.Add( i + ".07.2020");
                 
 
             RodzajWizytyComboBox.Items.Add("Kontrolna");

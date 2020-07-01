@@ -20,18 +20,9 @@ namespace Przychodnia
             remove { RemoveHandler(TextChangedEvent, value); }
         }
 
-        public static readonly RoutedEvent TextChangedEvent =
-               EventManager.RegisterRoutedEvent("TabItemSelected",
-               RoutingStrategy.Bubble, typeof(RoutedEventHandler),
-               typeof(TextBoxLogin));
+        public static readonly RoutedEvent TextChangedEvent = EventManager.RegisterRoutedEvent("TabItemSelected", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(TextBoxLogin));
 
-        public static readonly DependencyProperty TextProperty =
-           DependencyProperty.Register(
-               "Text",
-               typeof(string),
-               typeof(TextBoxLogin),
-               new FrameworkPropertyMetadata(null)
-           );
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(TextBoxLogin), new FrameworkPropertyMetadata(null));
 
         public string Text
         {

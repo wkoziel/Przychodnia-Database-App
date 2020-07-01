@@ -7,7 +7,7 @@ namespace Przychodnia.DAL.Repozytoria
 {
     class RoomRepo
     {
-        private const string ALL_ROOMS_QUERY = "SELECT * FROM sala";
+        //Pobiera wszystkie sale z bazy
         public static List<Room> GetAllRooms()
         {
             List<Room> rooms = new List<Room>();
@@ -16,7 +16,7 @@ namespace Przychodnia.DAL.Repozytoria
                 using (var connection = DBConnection.Instance.Connection)
                 {
                     DBConnection.Instance.printBuilder();
-                    MySqlCommand command = new MySqlCommand(ALL_ROOMS_QUERY, connection);
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM sala", connection);
                     connection.Open();
                     var dataReader = command.ExecuteReader();
                     while (dataReader.Read())
@@ -25,13 +25,6 @@ namespace Przychodnia.DAL.Repozytoria
                 }
             }
             catch { }
-
-            //Console print
-            //foreach (var item in rooms)
-            //{
-            //    Debug.WriteLine(item.ToString());
-            //}
-
             return rooms;
         }
     }
