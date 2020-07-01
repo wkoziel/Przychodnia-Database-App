@@ -28,7 +28,7 @@ namespace Przychodnia.Functions
             InitializeComponent();
             FunctionName.Content = "Edytuj pacjenta";
             ComboBoxFill();
-            PESEL.Text = Lists.Patients[index].PESEL.ToString();
+            PESELTextBox.Text = Lists.Patients[index].PESEL.ToString();
             ImieTextBox.Text = Lists.Patients[index].Imie.ToString();
             NazwiskoTextBox.Text = Lists.Patients[index].Nazwisko.ToString();
             PlecComboBox.Text = Lists.Patients[index].Plec.ToString();
@@ -67,6 +67,26 @@ namespace Przychodnia.Functions
             MiesiacUrComboBox.Items.Add("Październik");
             MiesiacUrComboBox.Items.Add("Listopad");
             MiesiacUrComboBox.Items.Add("Grudzień");
+        }
+
+        private void SavePatientButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (PESELTextBox.Text == "")
+                MessageBox.Show("Pole PESEL jest puste!");
+            else if (ImieTextBox.Text == "")
+                MessageBox.Show("Pole Imię jest puste!");
+            //Dalsze warunki
+            else
+            {
+                if (FunctionName.Content == "Dodaj pacjenta")
+                {
+                    //AddPatient()
+                }
+                else if (FunctionName.Content == "Edytuj pacjenta")
+                {
+                    //UpdatePatient()
+                }
+            }
         }
     }
 }

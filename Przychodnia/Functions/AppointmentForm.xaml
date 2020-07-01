@@ -83,7 +83,7 @@
                     <TextBox x:Name="ZwolnienieTextBox" Text="" FontSize="14" Width="180" Height="60" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
                 </WrapPanel>
             </StackPanel>
-            <Button Grid.Row="3" Grid.Column="2" x:Name="SaveContent" Content="Zapisz" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Height="20" Margin="15"/>
+            <Button Grid.Row="3" Grid.Column="2" Content="Zapisz" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Height="20" Margin="15" Click="SaveAppointmentButtonClick"/>
         </Grid>
         
     </Grid>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Czas wygenerowania: 30 Cze 2020, 18:42
+-- Czas wygenerowania: 01 Lip 2020, 10:52
 -- Wersja serwera: 5.5.21-log
 -- Wersja PHP: 5.3.20
 
@@ -195,8 +195,8 @@ INSERT INTO `użytkownicy` (`Login`, `Hasło`, `CzyLekarz`) VALUES
 CREATE TABLE IF NOT EXISTS `wizyta` (
   `ID_wizyty` int(10) NOT NULL AUTO_INCREMENT,
   `PESEL` varchar(11) COLLATE utf8_polish_ci NOT NULL,
-  `ID_lekarza` int(3) NOT NULL,
-  `Numer_sali` int(3) NOT NULL,
+  `ID_lekarza` int(5) NOT NULL,
+  `Numer_sali` int(5) NOT NULL,
   `Rodzaj_wizyty` enum('Kontrolna','Zabieg','Konsultacja','Badanie') COLLATE utf8_polish_ci NOT NULL,
   `Opis_dolegliwości` text COLLATE utf8_polish_ci NOT NULL,
   `Data_wizyty` date NOT NULL,

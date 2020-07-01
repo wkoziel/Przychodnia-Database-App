@@ -21,7 +21,7 @@
 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="PESEL:" HorizontalAlignment="Left"  Height="30" FontSize="16"/>
-                    <TextBox x:Name="PESEL" Text="" FontSize="16" MaxLength="11" Width="180"/>
+                    <TextBox x:Name="PESELTextBox" Text="" FontSize="16" MaxLength="11" Width="180"/>
                 </WrapPanel>
                 
                 <WrapPanel Orientation="Vertical" Margin="5">
@@ -69,7 +69,7 @@
                     <TextBox x:Name="NumerKontaktowyTextBox" Text="" FontSize="16"  Width="180"/>
                 </WrapPanel>
             </StackPanel>
-            <Button Grid.Row="3" Grid.Column="2" x:Name="SaveContent" Content="Zapisz" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Height="20" Margin="15"/>
+            <Button Grid.Row="3" Grid.Column="2" Click="SavePatientButtonClick" Content="Zapisz" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Height="20" Margin="15"/>
         </Grid>
     </Grid>
 </Window>

@@ -12,6 +12,8 @@ namespace Przychodnia.Functions
             InitializeComponent();
             ComboBoxFill();
             FunctionName.Content = "Dodaj wizytę";
+            ID_wizytyTextBox.Text = (Lists.Appointments.Count + 1).ToString();
+            ID_wizytyTextBox.IsReadOnly = true;
         }
 
         public AppointmentForm(int index)
@@ -82,10 +84,31 @@ namespace Przychodnia.Functions
             }
                 
 
-            RodzajWizytyComboBox.Items.Add("Badanie");
+            RodzajWizytyComboBox.Items.Add("Kontrolna");
             RodzajWizytyComboBox.Items.Add("Zabieg");
-            RodzajWizytyComboBox.Items.Add("Kontrola");
+            RodzajWizytyComboBox.Items.Add("Konsultacja");
+            RodzajWizytyComboBox.Items.Add("Badanie");
         }
 
+        private void SaveAppointmentButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (ID_wizytyTextBox.Text == "")
+                MessageBox.Show("Pole ID Wizyty jest puste!");
+            else if(PESEL_Combobox.SelectedIndex == -1)
+                MessageBox.Show("Pole PESEL nie zostało wybrane!");
+            else
+            {
+                if (FunctionName.Content == "Dodaj wizytę")
+                {
+                    //AddAppointment()
+                }
+                if (FunctionName.Content == "Edytuj wizytę")
+                {
+                    //UpdateAppointment()
+                }
+            }
+            
+            
+        }
     }
 }
