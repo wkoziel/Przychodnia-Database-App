@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Czas wygenerowania: 01 Lip 2020, 10:52
+-- Czas wygenerowania: 01 Lip 2020, 17:18
 -- Wersja serwera: 5.5.21-log
 -- Wersja PHP: 5.3.20
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `pacjent` (
   `Data_urodzenia` date NOT NULL,
   `Wiek` int(3) NOT NULL,
   `Adres` text COLLATE utf8_polish_ci NOT NULL,
-  `Numer_kontaktowy` int(11) NOT NULL,
+  `Numer_kontaktowy` varchar(11) COLLATE utf8_polish_ci NOT NULL,
   PRIMARY KEY (`PESEL`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
@@ -72,20 +72,20 @@ CREATE TABLE IF NOT EXISTS `pacjent` (
 --
 
 INSERT INTO `pacjent` (`PESEL`, `Imię`, `Nazwisko`, `Płeć`, `Data_urodzenia`, `Wiek`, `Adres`, `Numer_kontaktowy`) VALUES
-('05310482498', 'Adrian', 'Japczyński', 'Mężczyzna', '2005-11-04', 15, 'Bytom ul. Kolonia Okrzei 27', 978210288),
-('10291869617', 'Brajan', 'Kozlo', 'Mężczyzna', '2010-09-18', 10, 'Poznań ul. Kupały 9', 295762313),
-('14291345894', 'Jan', 'Japczyński', 'Mężczyzna', '2014-09-13', 6, 'Bytom ul. Kolonia Okrzei 27', 978210288),
-('16232345969', 'Jessica', 'Bartoszkiewicz', 'Kobieta', '2016-03-23', 4, 'Kraków ul. Podbipięty Longinusa 138', 675962730),
-('16232471169', 'Andżela', 'Bartoszkiewicz', 'Kobieta', '2016-03-24', 4, 'Kraków ul. Podbipięty Longinusa 138', 675962730),
-('59050555596', 'Szczepan', 'Majewski', 'Mężczyzna', '1959-05-05', 61, 'Białystok ul. Angielska 102', 698332935),
-('68050758045', 'Bogumiła', 'Wiśniewska', 'Kobieta', '1968-05-07', 52, 'Warszawa ul. Chryzantemy 108', 988884513),
-('75070671795', 'Tomasz', 'Kozłowski', 'Mężczyzna', '1975-07-06', 45, 'Kielce ul. Malinowa 132', 876354082),
-('83081582452', 'Wiktor', 'Nowakowski', 'Mężczyzna', '1983-08-15', 37, 'Warszawa ul. Mikołaja z Długolasu 106', 717152680),
-('84102832862', 'Grażyna ', 'Żarko', 'Kobieta', '1984-10-28', 36, 'Olkusz ul. Nullo 5/19', 158843588),
-('85102760425', 'Kornelia', 'Rutkowska', 'Kobieta', '1985-10-27', 35, 'Łódź ul. Narcyzowa 114', 53090737),
-('90072764465', 'Józefa', 'Borkowska', 'Kobieta', '1990-07-27', 30, 'Poznań ul. Ikara 85', 226916650),
-('91072850905', 'Oliwia', 'Chmielewska', 'Kobieta', '1991-07-28', 29, 'Łódź ul. Husarska 125', 147483647),
-('94112370775', 'Bazyli', 'Kozłowski', 'Mężczyzna', '1994-11-23', 26, 'Kielce ul. Zwierzyniecka 78', 887595549);
+('05310482498', 'Adrian', 'Japczyński', 'Mężczyzna', '2005-11-04', 15, 'Bytom ul. Kolonia Okrzei 27', '978210288'),
+('10291869617', 'Brajan', 'Kozlo', 'Mężczyzna', '2010-09-18', 10, 'Poznań ul. Kupały 9', '295762313'),
+('14291345894', 'Jan', 'Japczyński', 'Mężczyzna', '2014-09-13', 6, 'Bytom ul. Kolonia Okrzei 27', '978210288'),
+('16232345969', 'Jessica', 'Bartoszkiewicz', 'Kobieta', '2016-03-23', 4, 'Kraków ul. Podbipięty Longinusa 138', '675962730'),
+('16232471169', 'Andżela', 'Bartoszkiewicz', 'Kobieta', '2016-03-24', 4, 'Kraków ul. Podbipięty Longinusa 138', '675962730'),
+('59050555596', 'Szczepan', 'Majewski', 'Mężczyzna', '1959-05-05', 61, 'Białystok ul. Angielska 102', '698332935'),
+('68050758045', 'Bogumiła', 'Wiśniewska', 'Kobieta', '1968-05-07', 52, 'Warszawa ul. Chryzantemy 108', '988884513'),
+('75070671795', 'Mariusz', 'Kozłowski', 'Mężczyzna', '1975-10-06', 45, 'Kielce ul. Malinowa 132', '876354082'),
+('83081582452', 'Wiktor', 'Nowakowski', 'Mężczyzna', '1983-08-15', 37, 'Warszawa ul. Mikołaja z Długolasu 106', '717152680'),
+('84102832862', 'Grażyna ', 'Żarko', 'Kobieta', '1984-10-28', 36, 'Olkusz ul. Nullo 5/19', '158843588'),
+('85102760425', 'Kornelia', 'Rutkowska', 'Kobieta', '1985-10-27', 35, 'Łódź ul. Narcyzowa 114', '53090737'),
+('90072764465', 'Józefa', 'Borkowska', 'Kobieta', '1990-07-27', 30, 'Poznań ul. Ikara 85', '226916650'),
+('91072850905', 'Oliwia', 'Chmielewska', 'Kobieta', '1991-07-28', 29, 'Łódź ul. Husarska 125', '147483647'),
+('94112370775', 'Bazyli', 'Kozłowski', 'Mężczyzna', '1994-11-23', 26, 'Kielce ul. Zwierzyniecka 78', '887595549');
 
 -- --------------------------------------------------------
 
@@ -106,9 +106,9 @@ CREATE TABLE IF NOT EXISTS `poradnia` (
 --
 
 INSERT INTO `poradnia` (`ID_poradni`, `Nazwa`, `Rodzaj_poradni`, `Opis`) VALUES
-(1, 'Poradnia alergologiczna', 'Publiczna', 'Zajmuje się diagnozowaniem i leczeniem różnego rodzaju alergii. \nAlergie: skórne (w postaci atopowego zapalenia skóry, pokrzywka itp.), układu pokarmowego (alergia pokarmowa)\nukładu oddechowego (alergiczny nieżyt nosa), inne choroby skóry i tkanki podskórnej.'),
-(2, 'Poradnia Pediatryczna', 'Publiczna', 'Sprawuje opiekę zdrowotną nad dziećmi do 18 roku życia*. W Poradni przyjmowane są zarówno dzieci chore, jak i dzieci zdrowe m.in. na badania kontrolne oraz niezbędne badania okresowe, bilanse stanu zdrowia dzieci, oraz szczepienia ochronne.'),
-(3, 'Poradnia Stomatologiczna', 'Prywatna', 'Prowadzi działalność leczniczą obejmującą:\r\nleczenie zachowawcze choroby próchnicowej zębów z zastosowaniem nowoczesnych metod i materiałów, leczenie zachowawcze wybranych wad rozwojowych twardych tkanek zębów oraz chorób twardych tkanek zębów nie próchnicowego pochodzenia z zastosowanie nowoczesnych metod i materiałów, leczenie urazów zębów stałych, leczenie endodontyczne zębów z zastosowaniem nowoczesnych metod opracowania i wypełniania kanałów korzeniowych, leczenie powikłań zaistniałych w trakcie leczenia endodontycznego oraz powtórne.');
+(1, 'Poradnia alergologiczna', 'Publiczna', 'Zajmuje się diagnozowaniem i leczeniem różnego rodzaju alergii.\nAlergie: skórne (w postaci atopowego zapalenia skóry, pokrzywka itp.),\nukładu pokarmowego (alergia pokarmowa),\nukładu oddechowego (alergiczny nieżyt nosa),\ninne choroby skóry i tkanki podskórnej.'),
+(2, 'Poradnia Pediatryczna', 'Publiczna', 'Sprawuje opiekę zdrowotną nad dziećmi do 18 roku życia.\nW Poradni przyjmowane są zarówno dzieci chore, jak i dzieci zdrowe\nm.in. na badania kontrolne oraz niezbędne badania okresowe,\nbilanse stanu zdrowia dzieci, oraz szczepienia ochronne.'),
+(3, 'Poradnia Stomatologiczna', 'Prywatna', 'Prowadzi działalność leczniczą obejmującą:\nleczenie zachowawcze choroby próchnicowej zębów z zastosowaniem nowoczesnych metod i materiałów,\nleczenie zachowawcze wybranych wad rozwojowych twardych tkanek zębów oraz\nchorób twardych tkanek zębów nie próchnicowego pochodzenia z zastosowanie nowoczesnych metod\ni materiałów, leczenie urazów zębów stałych,\nleczenie endodontyczne zębów z zastosowaniem nowoczesnych metod opracowania i\nwypełniania kanałów korzeniowych,\nleczenie powikłań zaistniałych w trakcie leczenia\nendodontycznego oraz powtórne.');
 
 -- --------------------------------------------------------
 
@@ -208,19 +208,19 @@ CREATE TABLE IF NOT EXISTS `wizyta` (
   KEY `PESEL` (`PESEL`),
   KEY `ID_lekarza` (`ID_lekarza`),
   KEY `Numer_sali` (`Numer_sali`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci AUTO_INCREMENT=19 ;
 
 --
 -- Zrzut danych tabeli `wizyta`
 --
 
 INSERT INTO `wizyta` (`ID_wizyty`, `PESEL`, `ID_lekarza`, `Numer_sali`, `Rodzaj_wizyty`, `Opis_dolegliwości`, `Data_wizyty`, `Godzina_wizyty`, `Choroba`, `Leczenie`, `Zwolnienie`) VALUES
-(1, '16232345969', 2, 4, 'Kontrolna', '-brak', '2020-05-19', '08:00:00', '-brak', '-brak', '-brak'),
+(1, '16232345969', 2, 4, 'Kontrolna', '-brak', '2020-05-19', '08:00:00', 'Mózg', '-brak', '-brak'),
 (2, '16232471169', 2, 4, 'Kontrolna', '-brak', '2020-05-19', '08:30:00', '-brak', '-brak', '-brak'),
 (3, '68050758045', 3, 9, 'Zabieg', 'Ból zęba ', '2020-05-19', '08:00:00', 'Ból zęba ', 'Plomba światłoczuła ', '-brak'),
 (4, '94112370775', 1, 3, 'Konsultacja', 'Wysypka', '2020-05-19', '08:00:00', 'Uczulenie na sól', 'Odczulanie', '3 dni'),
 (5, '05310482498', 4, 5, 'Badanie', 'Złamanie z przemieszczeniem', '2020-05-19', '08:00:00', '', 'Nastawianie kości,gips', '3 mies'),
-(6, '91072850905', 5, 8, 'Badanie', 'Świąd', '2020-05-19', '08:00:00', 'Uczulenie na pyłki brzozy', 'Odczulenie ', '2 dni'),
+(6, '91072850905', 5, 8, 'Badanie', 'Świąd', '2020-05-19', '10:00:00', 'Uczulenie na pyłki brzozy', 'Odczulenie ', '2 dni'),
 (7, '10291869617', 4, 5, 'Badanie', 'Zawroty głowy,wymioty złe samopoczucie', '2020-05-19', '08:30:00', 'Rak jelita grubego ', 'Przepisanie chemioterapii', 'Bezterminowe'),
 (8, '75070671795', 5, 3, 'Zabieg', 'Usuwanie czerniaka', '2020-05-19', '08:30:00', 'Czerniak', 'Usunięcie czerniaka', '-brak'),
 (9, '91072850905', 5, 8, 'Kontrolna', '-brak', '2020-05-26', '09:00:00', '-brak', '-brak', '-brak'),
@@ -230,7 +230,7 @@ INSERT INTO `wizyta` (`ID_wizyty`, `PESEL`, `ID_lekarza`, `Numer_sali`, `Rodzaj_
 (13, '14291345894', 6, 9, 'Zabieg', 'Ból zęba', '2020-05-26', '08:00:00', '', 'Wyrwanie zęba', '-brak'),
 (14, '75070671795', 6, 8, 'Kontrolna', 'Ból zęba', '2020-05-25', '08:00:00', '-brak', 'fluoryzacja', '-brak'),
 (15, '59050555596', 3, 9, 'Zabieg', 'Zbyt żółte zęby ', '2020-05-21', '09:00:00', '-brak', 'wybielanie zębów', '-brak'),
-(16, '83081582452', 3, 7, 'Konsultacja', 'Ból dziąseł', '2020-05-22', '09:30:00', 'Obrzęk dziąseł', 'Przepisanie maści i ziół', '-brak');
+(16, '83081582452', 3, 7, 'Konsultacja', 'Ból dziąseł', '2020-05-22', '11:00:00', 'Obrzęk dziąseł', 'Przepisanie maści i ziół', '-brak');
 
 --
 -- Ograniczenia dla zrzutów tabel
