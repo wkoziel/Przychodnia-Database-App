@@ -19,5 +19,10 @@ namespace Przychodnia.Tabs
         {
             AppointmentIndex = AppointmentListView.SelectedIndex;
         }
+
+        private void RefreshAppointmentList()
+        {
+            AppointmentListView.Items.Refresh();
+        }
     }
 }

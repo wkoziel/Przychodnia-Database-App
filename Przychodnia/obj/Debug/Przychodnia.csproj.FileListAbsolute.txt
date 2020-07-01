@@ -44,7 +44,6 @@ C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Deb
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Functions\PatientForm.baml
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Functions\AppointmentForm.g.cs
 C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Functions\AppointmentForm.baml
-C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.csprojAssemblyReference.cache
 C:\Users\Rafał\Documents\GitHub\Przychodnia_Projekt\Przychodnia\bin\Debug\Przychodnia.exe.config
 C:\Users\Rafał\Documents\GitHub\Przychodnia_Projekt\Przychodnia\bin\Debug\Przychodnia.exe
 C:\Users\Rafał\Documents\GitHub\Przychodnia_Projekt\Przychodnia\bin\Debug\Przychodnia.pdb

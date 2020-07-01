@@ -25,7 +25,7 @@ namespace Przychodnia.DAL.Encje
             Imie = dataReader["Imię"].ToString();
             Nazwisko = dataReader["Nazwisko"].ToString();
             Plec = dataReader["Płeć"].ToString();
-            Data_urodzenia = dataReader["Data_urodzenia"].ToString();
+            Data_urodzenia = dataReader["Data_urodzenia"].ToString().Remove(10);
             Wiek = (int)dataReader["Wiek"];
             Adres = dataReader["Adres"].ToString();
             Numer_kontaktowy = dataReader["Numer_kontaktowy"].ToString();

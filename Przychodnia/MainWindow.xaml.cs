@@ -27,7 +27,6 @@ namespace Przychodnia
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
@@ -94,13 +93,15 @@ namespace Przychodnia
         {
             if (TabsComboBox.SelectedIndex == 1)
             {
-                PatientForm window = new PatientForm();
-                window.Show();
+                PatientForm PatientWindow = new PatientForm();
+                PatientWindow.DataChanged += PatientWindow_DataChanged;
+                PatientWindow.Show();
             }
             else if(TabsComboBox.SelectedIndex == 0)
             {
-                AppointmentForm window = new AppointmentForm();
-                window.Show();
+                AppointmentForm AppointmentTab = new AppointmentForm();
+                AppointmentTab.DataChanged += AppoinmentWindow_DataChanged;
+                AppointmentTab.Show();
             }
             
         }
@@ -109,17 +110,55 @@ namespace Przychodnia
         {
             if (TabsComboBox.SelectedIndex == 0)
             {
-                
                 int index = AppointmentTab.AppointmentIndex;
-                AppointmentForm window = new AppointmentForm(index);
-                window.Show();
+                AppointmentForm AppoinmentWindow = new AppointmentForm(index);
+                AppoinmentWindow.DataChanged += AppoinmentWindow_DataChanged;
+                AppoinmentWindow.Show();
             }
             else if (TabsComboBox.SelectedIndex == 1)
             {
-                int index = AppointmentTab.AppointmentIndex;
-                PatientForm window = new PatientForm(index);
-                window.Show();
+                int index = PatientTab.PatientIndex;
+                PatientForm PatientWindow = new PatientForm(index);
+                PatientWindow.DataChanged += PatientWindow_DataChanged;
+                PatientWindow.Show();
             }
+        }
+
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (TabsComboBox.SelectedIndex == 0)
+            {
+                MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz usunąć?", "Alert", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    int index = AppointmentTab.AppointmentIndex;
+                    AppointmentRepo.DeleteAppointment(Lists.Appointments[index].ID_wizyty.ToString());
+                    TableSpace.Children.Clear();
+                    TableSpace.Children.Add(new AppointmentTab());
+                }     
+            }
+            else if (TabsComboBox.SelectedIndex == 1)
+            {
+                MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz usunąć?", "Alert", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    int index = PatientTab.PatientIndex;
+                    PatientRepo.DeletePatient(Lists.Patients[index].PESEL);
+                    TableSpace.Children.Clear();
+                    TableSpace.Children.Add(new PatientTab());
+                }
+            }
+        }
+        private void AppoinmentWindow_DataChanged(object sender, EventArgs e)
+        {
+            TableSpace.Children.Clear();
+            TableSpace.Children.Add(new AppointmentTab());
+        }
+
+        private void PatientWindow_DataChanged(object sender, EventArgs e)
+        {
+            TableSpace.Children.Clear();
+            TableSpace.Children.Add(new PatientTab());
         }
     }
 }

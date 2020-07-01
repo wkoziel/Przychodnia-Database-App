@@ -13,6 +13,7 @@ namespace Przychodnia
     {
         public string Login { get; set; }
         public string Password { get; set; }
+        public bool IfDoctor { get; set; }
 
         public LoginScreen()
         {
@@ -43,9 +44,14 @@ namespace Przychodnia
         {
             string nick = textBoxLogin.Text;
             string password = textBoxPassword.Password;
-            if (UserCheck(nick, password) == false) return;
+            if (UserCheck(nick, password) == false) 
+            {
+                MessageBox.Show("Niepoprawny login lub hasło!");
+                return;
+            }
+            
             DBConnection.Login(nick, password);
-
+            
             MainWindow window = new MainWindow();
             window.Show();
             Close();

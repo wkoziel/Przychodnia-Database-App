@@ -1,5 +1,7 @@
 ﻿using Przychodnia.DAL.Encje;
+using Przychodnia.DAL.Repozytoria;
 using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 namespace Przychodnia.Functions
@@ -7,6 +9,10 @@ namespace Przychodnia.Functions
 
     public partial class AppointmentForm : Window
     {
+        public delegate void DataChangedEventHandler(object sender, EventArgs e);
+
+        public event DataChangedEventHandler DataChanged;
+
         public AppointmentForm()
         {
             InitializeComponent();
@@ -15,7 +21,6 @@ namespace Przychodnia.Functions
             ID_wizytyTextBox.Text = (Lists.Appointments.Count + 1).ToString();
             ID_wizytyTextBox.IsReadOnly = true;
         }
-
         public AppointmentForm(int index)
         {
             InitializeComponent();
@@ -38,7 +43,6 @@ namespace Przychodnia.Functions
         {
             this.Close();
         }
-
         private void ComboBoxFill()
         {
             foreach (var item in Lists.Patients)
@@ -89,7 +93,6 @@ namespace Przychodnia.Functions
             RodzajWizytyComboBox.Items.Add("Konsultacja");
             RodzajWizytyComboBox.Items.Add("Badanie");
         }
-
         private void SaveAppointmentButtonClick(object sender, RoutedEventArgs e)
         {
             if (ID_wizytyTextBox.Text == "")
@@ -113,35 +116,32 @@ namespace Przychodnia.Functions
                 MessageBox.Show("Pole Opis objawów nie zostało wybrane!");
             else if (OpisTextBox.Text == "")
                 MessageBox.Show("Pole Opis objawów nie zostało wybrane!");
-
-
-
-
-
-
-
-
-
-
-
             else
             {
-                if (FunctionName.Content == "Dodaj wizytę")
+                if (FunctionName.Content.ToString() == "Dodaj wizytę")
                 {
-                    //AddAppointment()
+                    AppointmentRepo.AddNewAppointment(ID_wizytyTextBox.Text.ToString(), PESEL_Combobox.SelectedItem.ToString(),IdLekarzaComboBox.SelectedItem.ToString(), NrSaliComboBox.SelectedItem.ToString(), RodzajWizytyComboBox.SelectedItem.ToString(), 
+                        OpisTextBox.Text.ToString(), DataWizytyCombobox.SelectedItem.ToString(), GodzWizytyComboBox.SelectedItem.ToString(), ChorobaTextBox.Text.ToString(), LeczenieTextBox.Text.ToString(), ZwolnienieTextBox.Text.ToString());
+                    
+                    DataChangedEventHandler handler = DataChanged;
+                    if (handler != null)
+                        handler(this, new EventArgs());
+
+                    this.Close();
                 }
-                if (FunctionName.Content == "Edytuj wizytę")
+                if (FunctionName.Content.ToString() == "Edytuj wizytę")
                 {
-                    //UpdateAppointment()
+                    AppointmentRepo.EditAppointment(ID_wizytyTextBox.Text.ToString(), PESEL_Combobox.SelectedItem.ToString(), IdLekarzaComboBox.SelectedItem.ToString(), NrSaliComboBox.SelectedItem.ToString(), RodzajWizytyComboBox.SelectedItem.ToString(),
+                        OpisTextBox.Text.ToString(), DataWizytyCombobox.SelectedItem.ToString(), GodzWizytyComboBox.SelectedItem.ToString(), ChorobaTextBox.Text.ToString(), LeczenieTextBox.Text.ToString(), ZwolnienieTextBox.Text.ToString());
+                    
+                    DataChangedEventHandler handler = DataChanged;
+                    if (handler != null)
+                        handler(this, new EventArgs());
+
+                    this.Close();
                 }
             }
             
-            
-        }
-
-        private void PESEL_Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

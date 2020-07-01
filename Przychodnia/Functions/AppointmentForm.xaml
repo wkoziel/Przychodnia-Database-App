@@ -28,7 +28,7 @@
 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="PESEL" HorizontalAlignment="Left" Width="150" FontSize="16"/>
-                    <ComboBox x:Name="PESEL_Combobox" Text="" FontSize="16" Width="180" SelectionChanged="PESEL_Combobox_SelectionChanged"/>
+                    <ComboBox x:Name="PESEL_Combobox" Text="" FontSize="16" Width="180"/>
                 </WrapPanel>
 
                 <WrapPanel Orientation="Vertical" Margin="5">

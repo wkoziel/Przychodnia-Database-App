@@ -19,6 +19,7 @@ namespace Przychodnia.AllTabs
 {
     public partial class PatientTab : UserControl
     {
+        static public int PatientIndex { get; set; }
         public PatientTab()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace Przychodnia.AllTabs
 
         private void PatientListSelection(object sender, SelectionChangedEventArgs e)
         {
-            ;
+            PatientIndex = PatientListView.SelectedIndex;
         }
     }
 }

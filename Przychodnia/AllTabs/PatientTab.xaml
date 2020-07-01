@@ -13,9 +13,9 @@
                     <GridViewColumn DisplayMemberBinding="{Binding PESEL}" Header="PESEL" Width="100" />
                     <GridViewColumn DisplayMemberBinding="{Binding Imie}" Header="Imię" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Nazwisko}" Header="Nazwisko" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Plec}" Header="Płeć" Width="60"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Data_urodzenia}" Header="Data urodzenia" Width="140"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Wiek}" Header="Wiek" Width="70"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Plec}" Header="Płeć" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Data_urodzenia}" Header="Data urodzenia" Width="120"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Wiek}" Header="Wiek" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Adres}" Header="Adres" Width="220"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Numer_kontaktowy}" Header="Numer kontaktowy" Width="120"/>
                 </GridView>
