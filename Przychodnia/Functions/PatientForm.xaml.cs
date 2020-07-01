@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+
+
 
 namespace Przychodnia.Functions
 {
@@ -71,10 +74,36 @@ namespace Przychodnia.Functions
 
         private void SavePatientButtonClick(object sender, RoutedEventArgs e)
         {
+            
             if (PESELTextBox.Text == "")
                 MessageBox.Show("Pole PESEL jest puste!");
             else if (ImieTextBox.Text == "")
                 MessageBox.Show("Pole Imię jest puste!");
+            else if (NazwiskoTextBox.Text == "")
+                MessageBox.Show("Pole Nazwisko jest puste!");
+            else if (WiekTextBox.Text == "")
+                MessageBox.Show("Pole wiek jest puste!");
+            else if (AdresTextBox.Text == "")
+                MessageBox.Show("Pole Adres jest puste!");
+            else if (NumerKontaktowyTextBox.Text == "")
+                MessageBox.Show("Pole Numer kontaktowy jest puste!");
+            else if (PlecComboBox.SelectedIndex == -1)
+                MessageBox.Show("Pole Płeć nie zostało wybrane!");
+            else if (DzienUrComboBox.SelectedIndex == -1)
+                MessageBox.Show("Pole Dzień nie zostało wybrane!");
+            else if (MiesiacUrComboBox.SelectedIndex == -1)
+                MessageBox.Show("Pole Miesiac nie zostało wybrane!");
+            else if (RokUrComboBox.SelectedIndex == -1)
+                MessageBox.Show("Pole Rok nie zostało wybrane!");
+
+
+
+
+
+
+
+
+
             //Dalsze warunki
             else
             {
@@ -88,5 +117,71 @@ namespace Przychodnia.Functions
                 }
             }
         }
+
+       
+
+       
+
+        private void PESELTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        { 
+                Regex regex = new Regex("[^0-9]+");
+                e.Handled = regex.IsMatch(e.Text);
+        }
+
+       
+
+        private void NumerKontaktowyTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void WiekTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+        private void ImieTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^A-Za-z]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void NazwiskoTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^A-Za-z]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+        private void AdresTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^A-Za-z]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+        private void PESELTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ImieTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void WiekTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+        }
+
+        private void AdresTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void NumerKontaktowyTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+       
     }
 }

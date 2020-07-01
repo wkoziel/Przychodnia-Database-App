@@ -28,7 +28,7 @@
 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="PESEL" HorizontalAlignment="Left" Width="150" FontSize="16"/>
-                    <ComboBox x:Name="PESEL_Combobox" Text="" FontSize="16" Width="180"/>
+                    <ComboBox x:Name="PESEL_Combobox" Text="" FontSize="16" Width="180" SelectionChanged="PESEL_Combobox_SelectionChanged"/>
                 </WrapPanel>
 
                 <WrapPanel Orientation="Vertical" Margin="5">
@@ -61,7 +61,7 @@
                     
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="Opis dolegliwości" HorizontalAlignment="Left" Width="150" Height="30" FontSize="16"/>
-                    <TextBox x:Name="OpisTextBox" Text="" FontSize="14" Width="180" Height="60" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+                    <TextBox x:Name="OpisTextBox" Text="" FontSize="14" Width="180" Height="60" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" />
                 </WrapPanel>
             </StackPanel>
 

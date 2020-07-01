@@ -96,6 +96,34 @@ namespace Przychodnia.Functions
                 MessageBox.Show("Pole ID Wizyty jest puste!");
             else if(PESEL_Combobox.SelectedIndex == -1)
                 MessageBox.Show("Pole PESEL nie zostało wybrane!");
+
+            else if (NrSaliComboBox.SelectedIndex == -1)
+                MessageBox.Show("Pole Nr sali nie zostało wybrane!");
+            else if (IdLekarzaComboBox.SelectedIndex == -1)
+                MessageBox.Show("Pole Id lekarza nie zostało wybrane!");
+            else if (DataWizytyCombobox.SelectedIndex == -1)
+                MessageBox.Show("Pole Data wizyty nie zostało wybrane!");
+            else if (GodzWizytyComboBox.SelectedIndex == -1)
+                MessageBox.Show("Pole Godzina wizyty nie zostało wybrane!");
+            else if (RodzajWizytyComboBox.SelectedIndex == -1)
+                MessageBox.Show("Pole Rodzaj wizyty nie zostało wybrane!");
+            else if (OpisTextBox.Text == "")
+                MessageBox.Show("Pole Opis objawów nie zostało wybrane!");
+            else if (OpisTextBox.Text == "")
+                MessageBox.Show("Pole Opis objawów nie zostało wybrane!");
+            else if (OpisTextBox.Text == "")
+                MessageBox.Show("Pole Opis objawów nie zostało wybrane!");
+
+
+
+
+
+
+
+
+
+
+
             else
             {
                 if (FunctionName.Content == "Dodaj wizytę")
@@ -109,6 +137,11 @@ namespace Przychodnia.Functions
             }
             
             
+        }
+
+        private void PESEL_Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

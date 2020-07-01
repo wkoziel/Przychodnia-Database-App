@@ -21,17 +21,17 @@
 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="PESEL:" HorizontalAlignment="Left"  Height="30" FontSize="16"/>
-                    <TextBox x:Name="PESELTextBox" Text="" FontSize="16" MaxLength="11" Width="180"/>
+                    <TextBox x:Name="PESELTextBox"   Text="" FontSize="16" MaxLength="11" Width="180"  TextChanged="PESELTextBox_TextChanged" PreviewTextInput="PESELTextBox_PreviewTextInput"/>
                 </WrapPanel>
                 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="Imię:" HorizontalAlignment="Left"  Height="30" FontSize="16"/>
-                    <TextBox x:Name="ImieTextBox" Text="" FontSize="16" Width="180"/>
+                    <TextBox x:Name="ImieTextBox" Text="" FontSize="16" Width="180" TextChanged="ImieTextBox_TextChanged" PreviewTextInput="ImieTextBox_PreviewTextInput"/>
                 </WrapPanel>
                 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="Nazwisko:" HorizontalAlignment="Left" Width="150" Height="30" FontSize="16"/>
-                    <TextBox x:Name="NazwiskoTextBox" Text="" FontSize="16" Width="180"/>
+                    <TextBox x:Name="NazwiskoTextBox" Text="" FontSize="16" Width="180" PreviewTextInput="NazwiskoTextBox_PreviewTextInput"/>
                 </WrapPanel>
                 
                 <WrapPanel Orientation="Vertical" Margin="5">
@@ -56,17 +56,17 @@
 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="Wiek:" HorizontalAlignment="Left" Width="150" Height="30" FontSize="16"/>
-                    <TextBox x:Name="WiekTextBox" FontSize="16" Width="180" IsReadOnly="True" />
+                    <TextBox x:Name="WiekTextBox" FontSize="16" Width="180" MaxLength="3" TextChanged="WiekTextBox_TextChanged" PreviewTextInput="WiekTextBox_PreviewTextInput" />
                 </WrapPanel>
 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="Adres:" HorizontalAlignment="Left" Width="150" Height="30" FontSize="16"/>
-                    <TextBox x:Name="AdresTextBox" Text="" FontSize="14" Width="180" Height="60" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+                    <TextBox x:Name="AdresTextBox" Text="" FontSize="14" Width="180" Height="60" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextChanged="AdresTextBox_TextChanged" PreviewTextInput="AdresTextBox_PreviewTextInput"/>
                 </WrapPanel>
                 
                 <WrapPanel Orientation="Vertical" Margin="5">
                     <Label Content="Numer kontaktowy:" HorizontalAlignment="Left" Width="150" Height="30" FontSize="16"/>
-                    <TextBox x:Name="NumerKontaktowyTextBox" Text="" FontSize="16"  Width="180"/>
+                    <TextBox x:Name="NumerKontaktowyTextBox" Text="" FontSize="16" MaxLength="9"  Width="180" TextChanged="NumerKontaktowyTextBox_TextChanged" PreviewTextInput="NumerKontaktowyTextBox_PreviewTextInput"/>
                 </WrapPanel>
             </StackPanel>
             <Button Grid.Row="3" Grid.Column="2" Click="SavePatientButtonClick" Content="Zapisz" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Height="20" Margin="15"/>
