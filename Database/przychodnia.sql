@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Czas wygenerowania: 01 Lip 2020, 17:18
+-- Czas wygenerowania: 03 Lip 2020, 00:10
 -- Wersja serwera: 5.5.21-log
 -- Wersja PHP: 5.3.20
 
@@ -72,9 +72,8 @@ CREATE TABLE IF NOT EXISTS `pacjent` (
 --
 
 INSERT INTO `pacjent` (`PESEL`, `Imię`, `Nazwisko`, `Płeć`, `Data_urodzenia`, `Wiek`, `Adres`, `Numer_kontaktowy`) VALUES
-('05310482498', 'Adrian', 'Japczyński', 'Mężczyzna', '2005-11-04', 15, 'Bytom ul. Kolonia Okrzei 27', '978210288'),
-('10291869617', 'Brajan', 'Kozlo', 'Mężczyzna', '2010-09-18', 10, 'Poznań ul. Kupały 9', '295762313'),
-('14291345894', 'Jan', 'Japczyński', 'Mężczyzna', '2014-09-13', 6, 'Bytom ul. Kolonia Okrzei 27', '978210288'),
+('05310482498', 'Brajan', 'Kozlo', 'Mężczyzna', '2010-09-18', 10, 'Poznań ul. Kupały 9', '295762313'),
+('14291345894', 'Wiktor', 'Nowakowski', 'Mężczyzna', '1983-08-15', 37, 'Warszawa ul. Mikołaja z Długolasu 106', '717152680'),
 ('16232345969', 'Jessica', 'Bartoszkiewicz', 'Kobieta', '2016-03-23', 4, 'Kraków ul. Podbipięty Longinusa 138', '675962730'),
 ('16232471169', 'Andżela', 'Bartoszkiewicz', 'Kobieta', '2016-03-24', 4, 'Kraków ul. Podbipięty Longinusa 138', '675962730'),
 ('59050555596', 'Szczepan', 'Majewski', 'Mężczyzna', '1959-05-05', 61, 'Białystok ul. Angielska 102', '698332935'),
@@ -85,7 +84,8 @@ INSERT INTO `pacjent` (`PESEL`, `Imię`, `Nazwisko`, `Płeć`, `Data_urodzenia`,
 ('85102760425', 'Kornelia', 'Rutkowska', 'Kobieta', '1985-10-27', 35, 'Łódź ul. Narcyzowa 114', '53090737'),
 ('90072764465', 'Józefa', 'Borkowska', 'Kobieta', '1990-07-27', 30, 'Poznań ul. Ikara 85', '226916650'),
 ('91072850905', 'Oliwia', 'Chmielewska', 'Kobieta', '1991-07-28', 29, 'Łódź ul. Husarska 125', '147483647'),
-('94112370775', 'Bazyli', 'Kozłowski', 'Mężczyzna', '1994-11-23', 26, 'Kielce ul. Zwierzyniecka 78', '887595549');
+('94112370775', 'Bazyli', 'Kozłowski', 'Mężczyzna', '1994-11-23', 26, 'Kielce ul. Zwierzyniecka 78', '887595549'),
+('98042407532', 'Wojtek', 'Nowak', 'Mężczyzna', '1996-03-03', 24, 'Żywiec ul. Miła 9', '553321332');
 
 -- --------------------------------------------------------
 
@@ -208,29 +208,27 @@ CREATE TABLE IF NOT EXISTS `wizyta` (
   KEY `PESEL` (`PESEL`),
   KEY `ID_lekarza` (`ID_lekarza`),
   KEY `Numer_sali` (`Numer_sali`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci AUTO_INCREMENT=17 ;
 
 --
 -- Zrzut danych tabeli `wizyta`
 --
 
 INSERT INTO `wizyta` (`ID_wizyty`, `PESEL`, `ID_lekarza`, `Numer_sali`, `Rodzaj_wizyty`, `Opis_dolegliwości`, `Data_wizyty`, `Godzina_wizyty`, `Choroba`, `Leczenie`, `Zwolnienie`) VALUES
-(1, '16232345969', 2, 4, 'Kontrolna', '-brak', '2020-05-19', '08:00:00', 'Mózg', '-brak', '-brak'),
-(2, '16232471169', 2, 4, 'Kontrolna', '-brak', '2020-05-19', '08:30:00', '-brak', '-brak', '-brak'),
-(3, '68050758045', 3, 9, 'Zabieg', 'Ból zęba ', '2020-05-19', '08:00:00', 'Ból zęba ', 'Plomba światłoczuła ', '-brak'),
-(4, '94112370775', 1, 3, 'Konsultacja', 'Wysypka', '2020-05-19', '08:00:00', 'Uczulenie na sól', 'Odczulanie', '3 dni'),
-(5, '05310482498', 4, 5, 'Badanie', 'Złamanie z przemieszczeniem', '2020-05-19', '08:00:00', '', 'Nastawianie kości,gips', '3 mies'),
-(6, '91072850905', 5, 8, 'Badanie', 'Świąd', '2020-05-19', '10:00:00', 'Uczulenie na pyłki brzozy', 'Odczulenie ', '2 dni'),
-(7, '10291869617', 4, 5, 'Badanie', 'Zawroty głowy,wymioty złe samopoczucie', '2020-05-19', '08:30:00', 'Rak jelita grubego ', 'Przepisanie chemioterapii', 'Bezterminowe'),
-(8, '75070671795', 5, 3, 'Zabieg', 'Usuwanie czerniaka', '2020-05-19', '08:30:00', 'Czerniak', 'Usunięcie czerniaka', '-brak'),
-(9, '91072850905', 5, 8, 'Kontrolna', '-brak', '2020-05-26', '09:00:00', '-brak', '-brak', '-brak'),
-(10, '84102832862', 6, 9, 'Zabieg', 'Ból zęba ', '2020-05-19', '08:00:00', 'Martwy ząb', 'Wyrwanie', '1 dzień'),
-(11, '59050555596', 1, 1, 'Konsultacja', 'Ból żołądka', '2020-05-19', '08:30:00', 'Zatrucie', 'Przepisano leki', '1 tyg'),
-(12, '83081582452', 3, 9, 'Konsultacja', 'Krwawienie dziąseł', '2020-05-19', '08:30:00', 'Paradontoza', 'Przepisanie pasty i maści', '-brak'),
-(13, '14291345894', 6, 9, 'Zabieg', 'Ból zęba', '2020-05-26', '08:00:00', '', 'Wyrwanie zęba', '-brak'),
-(14, '75070671795', 6, 8, 'Kontrolna', 'Ból zęba', '2020-05-25', '08:00:00', '-brak', 'fluoryzacja', '-brak'),
-(15, '59050555596', 3, 9, 'Zabieg', 'Zbyt żółte zęby ', '2020-05-21', '09:00:00', '-brak', 'wybielanie zębów', '-brak'),
-(16, '83081582452', 3, 7, 'Konsultacja', 'Ból dziąseł', '2020-05-22', '11:00:00', 'Obrzęk dziąseł', 'Przepisanie maści i ziół', '-brak');
+(2, '16232471169', 2, 4, 'Kontrolna', '-', '2020-07-01', '08:30:00', '-', '-', '-'),
+(3, '68050758045', 3, 9, 'Zabieg', 'Ból zęba ', '2020-07-01', '08:00:00', 'Ból zęba ', 'Plomba światłoczuła ', '-'),
+(4, '94112370775', 1, 3, 'Konsultacja', 'Wysypka', '2020-07-01', '08:00:00', 'Uczulenie', 'Odczulanie', '-'),
+(5, '05310482498', 4, 5, 'Badanie', 'Złamanie z przemieszczeniem', '2020-07-02', '08:00:00', '-', 'Nastawianie kości, gips', '3 miesiące'),
+(6, '91072850905', 5, 8, 'Badanie', 'Świąd', '2020-07-01', '10:00:00', 'Uczulenie na pyłki brzozy', 'Odczulenie ', '2 dni'),
+(8, '75070671795', 5, 3, 'Zabieg', 'Usuwanie czerniaka', '2020-07-02', '08:30:00', 'Czerniak', 'Usunięcie czerniaka', '-'),
+(9, '91072850905', 5, 8, 'Kontrolna', '-', '2020-07-03', '09:00:00', '-', '-', '-'),
+(10, '84102832862', 6, 9, 'Zabieg', 'Ból zęba ', '2020-07-03', '08:00:00', 'Martwy ząb', 'Wyrwanie', '1 dzień'),
+(11, '59050555596', 1, 1, 'Konsultacja', 'Ból żołądka', '2020-07-02', '08:30:00', 'Zatrucie', 'Przepisano leki', '1 tydzień'),
+(12, '83081582452', 3, 9, 'Konsultacja', 'Krwawienie dziąseł', '2020-07-03', '08:30:00', 'Paradontoza', 'Przepisanie pasty i maści', '-'),
+(13, '14291345894', 6, 9, 'Zabieg', 'Ból zęba', '2020-07-02', '08:00:00', 'Pruchnica', 'Wyrwanie zęba', '-'),
+(14, '14291345894', 1, 2, 'Zabieg', 'Bół głowy', '2020-07-02', '08:30:00', 'Migrena', 'Środki przeciwbólowe', '-'),
+(15, '14291345894', 2, 6, 'Konsultacja', '-', '2020-07-03', '11:30:00', '-', '-', '-'),
+(16, '14291345894', 2, 3, 'Zabieg', 'Ból zęba', '2020-07-02', '09:00:00', '-', '-', '-');
 
 --
 -- Ograniczenia dla zrzutów tabel
