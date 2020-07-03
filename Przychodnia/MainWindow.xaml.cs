@@ -284,5 +284,12 @@ namespace Przychodnia
                 TabsComboBox.IsEnabled = true;
             }
         }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            LoginScreen window = new LoginScreen();
+            window.Show();
+            this.Close();
+        }
     }
 }

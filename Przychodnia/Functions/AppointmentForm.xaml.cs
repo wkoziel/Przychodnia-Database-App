@@ -73,6 +73,7 @@ namespace Przychodnia.Functions
             GodzWizytyComboBox.Items.Add("16:30:00");
             GodzWizytyComboBox.Items.Add("17:00:00");
 
+
             for (int i = 1; i < 10; i++)
                 DataWizytyCombobox.Items.Add("0"+i+".07.2020");
                 
@@ -92,7 +93,6 @@ namespace Przychodnia.Functions
                 MessageBox.Show("Pole ID Wizyty jest puste!");
             else if(PESEL_Combobox.SelectedIndex == -1)
                 MessageBox.Show("Pole PESEL nie zostało wybrane!");
-
             else if (NrSaliComboBox.SelectedIndex == -1)
                 MessageBox.Show("Pole Nr sali nie zostało wybrane!");
             else if (IdLekarzaComboBox.SelectedIndex == -1)
@@ -109,6 +109,12 @@ namespace Przychodnia.Functions
                 MessageBox.Show("Pole Opis objawów nie zostało wybrane!");
             else if (OpisTextBox.Text == "")
                 MessageBox.Show("Pole Opis objawów nie zostało wybrane!");
+            else if (RoomCheck(ID_wizytyTextBox.Text.ToString(), NrSaliComboBox.SelectedItem.ToString(), DataWizytyCombobox.SelectedItem.ToString(), GodzWizytyComboBox.SelectedItem.ToString()) == true)
+                MessageBox.Show("Sala w tym terminie jest już zajęta!");
+            else if (DoctorCheck(ID_wizytyTextBox.Text.ToString(), IdLekarzaComboBox.SelectedItem.ToString(), DataWizytyCombobox.SelectedItem.ToString(), GodzWizytyComboBox.SelectedItem.ToString()) == true)
+                MessageBox.Show("Lekarz w tym terminie jest już zajęty!");
+            else if (PatientCheck(ID_wizytyTextBox.Text.ToString(), PESEL_Combobox.SelectedItem.ToString(), DataWizytyCombobox.SelectedItem.ToString(), GodzWizytyComboBox.SelectedItem.ToString()) == true)
+                MessageBox.Show("Pacjent w tym terminie jest już zajęty!");
             else
             {
                 if (FunctionName.Content.ToString() == "Dodaj wizytę")
@@ -134,7 +140,28 @@ namespace Przychodnia.Functions
                     this.Close();
                 }
             }
-            
+        }
+        private bool RoomCheck(string id, string nrsali, string data, string godzina)
+        {
+            foreach (var item in Lists.Appointments)
+                if (item.Numer_sali.ToString() == nrsali & item.Data_wizyty == data & item.Godzina_wizyty == godzina & item.ID_wizyty.ToString() != id)
+                    return true;
+            return false;
+        }
+        private bool PatientCheck(string id, string pesel, string data, string godzina)
+        {
+            foreach (var item in Lists.Appointments)
+                if (item.PESEL.ToString() == pesel & item.Data_wizyty == data & item.Godzina_wizyty == godzina & item.ID_wizyty.ToString() != id)
+                    return true;
+            return false;
+        }
+
+        private bool DoctorCheck(string id, string lekarz, string data, string godzina)
+        {
+            foreach (var item in Lists.Appointments)
+                if (item.Numer_sali.ToString() == lekarz & item.Data_wizyty == data & item.Godzina_wizyty == godzina & item.ID_wizyty.ToString() != id)
+                    return true;
+            return false;
         }
     }
 }

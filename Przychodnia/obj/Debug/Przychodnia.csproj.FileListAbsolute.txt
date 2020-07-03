@@ -90,3 +90,4 @@ C:\Users\Rafał\Documents\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przyc
 C:\Users\Rafał\Documents\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.csproj.CopyComplete
 C:\Users\Rafał\Documents\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.exe
 C:\Users\Rafał\Documents\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.pdb
+C:\Users\wojte\OneDrive\Dokumenty\GitHub\Przychodnia_Projekt\Przychodnia\obj\Debug\Przychodnia.csprojAssemblyReference.cache
