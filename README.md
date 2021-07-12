@@ -23,6 +23,8 @@
 - MariaDB Database
 
 ## Screenshots
+![image](https://user-images.githubusercontent.com/44378819/125335171-8ac33280-e34c-11eb-804b-8e720e6b556d.png)
+![image](https://user-images.githubusercontent.com/44378819/125335392-c9f18380-e34c-11eb-96e7-b5a1d1e063e2.png)
 
 
 ## Project Status
