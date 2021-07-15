@@ -19,8 +19,8 @@
 
 
 ## Technologies Used
-- C# with WPF
-- MariaDB Database
+- **C# with WPF**
+- **MariaDB** Database
 
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/44378819/125335171-8ac33280-e34c-11eb-804b-8e720e6b556d.png)
